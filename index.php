@@ -39,6 +39,7 @@
             </div>
         </section>
     </main>
+    <?php require_once __DIR__ . '/Includes/Footer.php'; ?>
     <script src="<?php echo JS_URL; ?>/Principal.js"></script>
 </body>
 </html>
