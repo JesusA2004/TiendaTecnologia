@@ -250,3 +250,190 @@ header nav input:focus {
 .cerrar:hover {
     color: var(--color-secundario);
 }
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Arreglar el header */
+body.dark-mode header {
+    background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+}
+
+/* Corregir la barra de búsqueda en el header */
+body.dark-mode nav input {
+    background-color: #3a3a3a;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* Corregir las categorías (Tablets y Refrigeradores) */
+body.dark-mode .categoria {
+    background: #2a2a2a;
+    color: white;
+}
+
+/* Asegurar que los textos dentro de .categoria se vean bien */
+body.dark-mode .categoria p {
+    color: white;
+}
+
+body.dark-mode .categoria button {
+    background: #444;
+    color: white;
+    border: 1px solid #666;
+}
+
+body.dark-mode .categoria button:hover {
+    background: #666;
+}
+
+/* Corregir el modal de registro */
+body.dark-mode .modal-contenido {
+    background-color: #333;
+    color: white;
+}
+
+/* Corregir el botón de cerrar en el modal */
+body.dark-mode .cerrar {
+    color: white;
+}
+
+/* Hacer el texto "CyberStore" amarillo en modo oscuro */
+body.dark-mode header h1 {
+    color: #FFD700; /* Amarillo brillante */
+}
+
+/* Hacer los botones "Ver más" amarillo oscuro */
+body.dark-mode .categoria button {
+    background: #C7A500; /* Amarillo oscuro */
+    color: black;
+}
+
+body.dark-mode .categoria button:hover {
+    background: #A38500; /* Un poco más oscuro al pasar el mouse */
+}
+
+/* Modo oscuro completo */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+body.dark-mode header {
+    background-color: #252525;
+}
+
+/* Solo la barra de búsqueda en el header cambia de color */
+body.dark-mode nav input {
+    background-color: #3a3a3a;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* Adaptar texto y botones */
+body.dark-mode h1, 
+body.dark-mode p, 
+body.dark-mode button {
+    color: white;
+}
+
+body.dark-mode button {
+    background-color: #444;
+    border: 1px solid #666;
+}
+
+/* En modo oscuro, invertir imágenes de íconos */
+body.dark-mode nav img, 
+body.dark-mode .icono-accesibilidad {
+    filter: invert(1);
+}
+
+/* Estilos del menú de accesibilidad */
+.accesibilidad {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.accesibilidad-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 170px;
+    z-index: 10;
+}
+
+body.dark-mode .accesibilidad-menu {
+    background: #2a2a2a;
+    color: white;
+}
+
+.accesibilidad-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+body.dark-mode .accesibilidad-menu a {
+    color: white;
+}
+
+.accesibilidad-menu a:hover {
+    background: #f0f0f0;
+}
+
+body.dark-mode .accesibilidad-menu a:hover {
+    background: #555;
+}
+
+/* Estilo para el menú adicional */
+.menu-adicional {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.menu-adicional-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 170px;
+    z-index: 10;
+}
+
+body.dark-mode .menu-adicional-menu {
+    background: #2a2a2a;
+    color: white;
+}
+
+.menu-adicional-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+body.dark-mode .menu-adicional-menu a {
+    color: white;
+}
+
+.menu-adicional-menu a:hover {
+    background: #f0f0f0;
+}
+
+body.dark-mode .menu-adicional-menu a:hover {
+    background: #555;
+}
