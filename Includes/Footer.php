@@ -1,7 +1,7 @@
 
 <footer>
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Footer.css">
-    <div class="footer-container">
+    <div class="footer-container" id="contacto">
         <div class="footer-section">
             <h3>Sobre Nosotros</h3>
             <p>CyberStore es tu tienda de tecnología de confianza. Ofrecemos laptops, tablets y refrigeradores con la mejor calidad y servicio.</p>

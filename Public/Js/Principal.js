@@ -48,3 +48,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 });
+
+const carrusel = {
+    currentIndex: 0,
+    init: function() {
+        this.items = document.querySelectorAll('.carrusel-item');
+        this.indicadores = document.querySelector('.carrusel-indicadores');
+        this.createIndicadores();
+        this.setEventListeners();
+        this.autoPlay();
+    },
+    createIndicadores: function() {
+        this.items.forEach((_, i) => {
+            const indicador = document.createElement('button');
+            indicador.classList.add('indicador');
+            indicador.addEventListener('click', () => this.goToIndex(i));
+            this.indicadores.appendChild(indicador);
+        });
+    },
+    setEventListeners: function() {
+        document.querySelector('.prev').addEventListener('click', () => this.prev());
+        document.querySelector('.next').addEventListener('click', () => this.next());
+    },
+    autoPlay: function() {
+        setInterval(() => this.next(), 5000);
+    },
+    update: function() {
+        document.querySelector('.carrusel-contenedor').style.transform = 
+            `translateX(-${this.currentIndex * 100}%)`;
+        this.updateIndicadores();
+    },
+    // ... resto de funciones del carrusel
+};
+
+document.addEventListener('DOMContentLoaded', () => carrusel.init());

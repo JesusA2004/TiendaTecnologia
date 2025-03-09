@@ -1,439 +1,587 @@
-/* Variables de colores */
+/* Variables de colores actualizadas */
 :root {
-    --color-primario: #f1de12;
-    --color-secundario: #f1de12;
-    --color-fondo: #f5f5f5;
-    --color-texto: #333;
-    --color-borde: #ddd;
-    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --color-primario: #f8e701;
+    --color-secundario: #ffdf6b;
+    --color-acento: #d96d00;
+    --color-fondo: #f8f9fa;
+    --color-texto: #2c3e50;
+    --color-borde: #dee2e6;
+    --sombra: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --transicion-rapida: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Reset y estilos base */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reset y estilos base mejorados */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-color: var(--color-fondo);
     color: var(--color-texto);
-    line-height: 1.6;
+    line-height: 1.65;
+    font-size: 1rem;
 }
 
 /* Header */
 header {
     background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
-    color: white;
     padding: 1.5rem 2rem;
     box-shadow: var(--sombra);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0; /* Lo fija en la parte superior */
+    left: 0; /* Alineado al lado izquierdo */
+    right: 0; /* Alineado al lado derecho */
+    z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
+    width: 100%; /* Asegura que ocupe todo el ancho de la página */
+    margin-top: 0; /* Evita que haya espacio adicional arriba */
 }
 
-header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: -1px;
+main{
+    padding-top: 80px;
+}
+.menu-principal {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
 }
 
-header nav input {
-    padding: 0.8rem 1.2rem;
-    border: none;
-    border-radius: 25px;
-    width: 300px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-}
-
-header nav input:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.3);
-    transform: scale(1.02);
-}
-
-/* Banner */
-.banner {
+.menu-item {
+    color: rgb(20, 20, 20);
+    text-decoration: none;
+    font-weight: 500;
     position: relative;
-    overflow: hidden;
-    margin: 2rem;
-    border-radius: 15px;
-    height: 400px;
-    box-shadow: var(--sombra);
+    padding: 0.5rem 0;
+    transition: var(--transicion-rapida);
 }
 
-.banner img {
+.menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-acento);
+    transition: var(--transicion-rapida);
+}
+
+.menu-item:hover::after {
+    width: 100%;
+}
+
+.menu-item:hover {
+    color: var(--color-acento);
+    transform: translateY(-2px);
+}
+
+.menu-item:focus {
+    outline: none;
+}
+
+/* Menú desplegable */
+.menu-desplegable {
+    position: relative;
+}
+
+.desplegable-contenido {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: var(--sombra);
+    border-radius: 8px;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transicion-rapida);
+    z-index: 100;
+}
+
+.menu-desplegable:hover .desplegable-contenido {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.desplegable-contenido a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: var(--color-texto);
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.desplegable-contenido a:hover {
+    background: var(--color-fondo);
+    color: var(--color-primario);
+    padding-left: 1.2rem;
+}
+
+/* Busqueda y usuario */
+.busqueda-usuario {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#buscar {
+    padding: 0.7rem 1.2rem;
+    border: 2px solid rgba(225, 40, 40, 0.2);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgb(16, 16, 16);
+    transition: var(--transicion-rapida);
+}
+
+#buscar:focus {
+    background: rgba(232, 166, 22, 0.2);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 77, 0, 0.2);
+}
+
+#icono-usuario {
+    width: 40px;
+    height: 40px;
+    border-radius: 30%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#icono-usuario:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(37, 36, 34, 0.5);
+}
+
+/* Modo oscuro */
+body.dark-mode .desplegable-contenido {
+    background: #2d2d2d;
+    border: 1px solid #3d3d3d;
+}
+
+body.dark-mode .desplegable-contenido a {
+    color: white;
+}
+
+body.dark-mode .desplegable-contenido a:hover {
+    background: #3d3d3d;
+}
+
+@media (max-width: 768px) {
+    .menu-principal {
+        gap: 1rem;
+    }
+    
+    .menu-item {
+        font-size: 0.9rem;
+    }
+    
+    .busqueda-usuario {
+        gap: 1rem;
+    }
+    
+    #buscar {
+        max-width: 150px;
+    }
+}
+/* Carrusel mejorado */
+.carrusel {
+    position: relative;
+    margin: 2rem auto;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 1400px;
+}
+
+.carrusel-contenedor {
+    position: relative;
+    height: 600px;
+}
+
+.carrusel-img {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 
-.banner:hover img {
-    transform: scale(1.05);
+.carrusel-img.activa {
+    opacity: 1;
 }
 
-/* Categorías */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    backdrop-filter: blur(5px);
+    transition: var(--transicion-rapida);
+}
+
+.carrusel-texto {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    text-align: center;
+    margin-top: 200px;
+    margin-left: 30%;
+}
+
+.carrusel-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Sección de categorías rediseñada */
 .categorias {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
     padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.texto {
+    text-align: center; /* Centra el texto */
+}
+
+.texto h2{
+    color:var(--color-primario); /* Centra el texto */
+}
+
+.categoria-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between; /* Espacio entre las cards */
 }
 
 .categoria {
     background: white;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--sombra);
-    transition: all 0.3s ease;
+    transition: var(--transicion-rapida);
     position: relative;
+    width: 100%;
+    max-width: 350px;
 }
 
 .categoria:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .categoria img {
     width: 100%;
-    height: 200px;
+    height: 400px;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
 .categoria:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.categoria-content {
+    padding: 1.5rem;
 }
 
 .categoria p {
-    font-size: 1.5rem;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0.75rem 0;
+    color: var(--color-texto);
+    text-align: justify;
+}
+.categoria h3 {
+    font-size: 1.25rem;
     font-weight: 600;
+    margin: 0.75rem 0;
+    color: var(--color-primario);
     text-align: center;
-    margin: 1rem 0;
 }
 
 .categoria button {
-    display: block;
-    width: 80%;
-    margin: 1rem auto;
-    padding: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
     background: var(--color-primario);
     color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    font-weight: 500;
+    transition: var(--transicion-rapida);
 }
 
 .categoria button:hover {
     background: var(--color-secundario);
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(36, 59, 85, 0.3);
 }
 
-/* Efecto overlay */
-.categoria::before {
+/* Sobre nosotros mejorado */
+.sobre-nosotros {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom right, #f8f9fa, #ffffff);
+    border-radius: 30px;
+}
+
+.card-sobre-nosotros {
+    max-width: 1350px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.card-sobre-nosotros h2 {
+    font-size: 2.5rem;
+    color: var(--color-primario);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.card-sobre-nosotros h2::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--color-acento);
+}
+
+.equipo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.miembro {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgb(244, 240, 198);
+    border-radius: 15px;
+    transition: var(--transicion-rapida);
+}
+.miembro h3{
+    text-align: center;
+}
+
+.miembro p, ul{
+    text-align: justify;
+}
+
+.miembro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.miembro img {
+    width: 50px;
+    height: 50px;
+    
+    object-fit: cover;
+   
+    margin-bottom: 1rem;
+}
+
+/* Modo oscuro mejorado */
+body.dark-mode {
+    --color-fondo: #121212;
+    --color-texto: #e0e0e0;
+    --color-borde: #2d2d2d;
+}
+
+body.dark-mode .categoria {
+    background: #1e1e1e;
+}
+
+body.dark-mode .card-sobre-nosotros {
+    background: #2d2d2d;
+}
+
+body.dark-mode header {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+}
+
+body.dark-mode .categoria button {
+    background: #2d2d2d;
+    border: 1px solid #3d3d3d;
+}
+
+/* Menús desplegables mejorados */
+.accesibilidad-menu, .menu-adicional-menu {
     opacity: 0;
-    transition: opacity 0.3s ease;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
 }
 
-.categoria:hover::before {
+.accesibilidad-menu.active, .menu-adicional-menu.active {
     opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-/* Responsive */
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .carrusel-contenedor {
+        height: 500px;
+    }
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        text-align: center;
+        gap: 1rem;
     }
-
+    
     header nav input {
         width: 100%;
-        margin-top: 1rem;
+        max-width: 400px;
     }
-
-    .banner {
-        height: 250px;
-        margin: 1rem;
+    
+    .carrusel-contenedor {
+        height: 400px;
     }
-
+    
     .categorias {
         grid-template-columns: 1fr;
         padding: 1rem;
     }
-} 
+}
 
-/* Estilos del formulario emergente */
+@media (max-width: 480px) {
+    .card-sobre-nosotros {
+        padding: 2rem 1rem;
+    }
+    
+    .miembro {
+        padding: 1rem;
+    }
+}
+
+/* Animaciones */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: slideIn 0.6s ease-out forwards;
+}
+
+/* Mejoras de accesibilidad */
+button:focus, input:focus, a:focus {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+}
+
+/* Modal que contiene el formulario */
+#formularioRegistro {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;  /* Lo fija en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);  /* Fondo oscuro semitransparente */
+    z-index: 1000;  /* Asegúrate de que esté por encima de otros elementos */
+}
+
 .modal {
-    display: none; /* Por defecto, oculto */
+    display: none; /* Ocultar el modal por defecto */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
 }
 
+/* Estilos para el contenido del formulario */
 .modal-contenido {
+    position: relative;
     background-color: white;
     padding: 2rem;
     border-radius: 10px;
-    width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.modal h2 {
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: var(--color-primario);
-}
-
-.modal input {
+/* Estilo del formulario */
+.modal-contenido form {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-contenido input,
+.modal-contenido button {
     padding: 0.8rem;
-    margin: 1rem 0;
-    border: 1px solid var(--color-borde);
-    border-radius: 5px;
     font-size: 1rem;
-    box-sizing: border-box;
-    transition: border 0.3s ease;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    
 }
-
-.modal input:focus {
-    border-color: var(--color-primario);
-    outline: none;
-}
-
-.modal button {
-    width: 100%;
-    padding: 0.8rem;
+.modal-contenido button {
     background-color: var(--color-primario);
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
-.modal button:hover {
-    background-color: var(--color-secundario);
-}
-
-/* Estilo para el botón de cerrar */
+/* Estilo del botón de cerrar */
 .cerrar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.5rem;
-    color: var(--color-primario);
+    position: absolute; /* Lo posiciona dentro del contenedor */
+    top: 10px; /* Ajusta la distancia desde el borde superior */
+    right: 10px; /* Ajusta la distancia desde el borde derecho */
+    font-size: 2rem;
     cursor: pointer;
+    color: var(--color-primario);
+    background: transparent;
+    border: none;
     transition: color 0.3s ease;
 }
 
 .cerrar:hover {
-    color: var(--color-secundario);
-}
-
-/* Modo oscuro */
-body.dark-mode {
-    background-color: #1e1e1e;
-    color: white;
-}
-
-/* Arreglar el header */
-body.dark-mode header {
-    background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
-}
-
-/* Corregir la barra de búsqueda en el header */
-body.dark-mode nav input {
-    background-color: #3a3a3a;
-    color: white;
-    border: 1px solid #555;
-}
-
-/* Corregir las categorías (Tablets y Refrigeradores) */
-body.dark-mode .categoria {
-    background: #2a2a2a;
-    color: white;
-}
-
-/* Asegurar que los textos dentro de .categoria se vean bien */
-body.dark-mode .categoria p {
-    color: white;
-}
-
-body.dark-mode .categoria button {
-    background: #444;
-    color: white;
-    border: 1px solid #666;
-}
-
-body.dark-mode .categoria button:hover {
-    background: #666;
-}
-
-/* Corregir el modal de registro */
-body.dark-mode .modal-contenido {
-    background-color: #333;
-    color: white;
-}
-
-/* Corregir el botón de cerrar en el modal */
-body.dark-mode .cerrar {
-    color: white;
-}
-
-/* Hacer el texto "CyberStore" amarillo en modo oscuro */
-body.dark-mode header h1 {
-    color: #FFD700; /* Amarillo brillante */
-}
-
-/* Hacer los botones "Ver más" amarillo oscuro */
-body.dark-mode .categoria button {
-    background: #C7A500; /* Amarillo oscuro */
-    color: black;
-}
-
-body.dark-mode .categoria button:hover {
-    background: #A38500; /* Un poco más oscuro al pasar el mouse */
-}
-
-/* Modo oscuro completo */
-body.dark-mode {
-    background-color: #1e1e1e;
-    color: white;
-}
-
-body.dark-mode header {
-    background-color: #252525;
-}
-
-/* Solo la barra de búsqueda en el header cambia de color */
-body.dark-mode nav input {
-    background-color: #3a3a3a;
-    color: white;
-    border: 1px solid #555;
-}
-
-/* Adaptar texto y botones */
-body.dark-mode h1, 
-body.dark-mode p, 
-body.dark-mode button {
-    color: white;
-}
-
-body.dark-mode button {
-    background-color: #444;
-    border: 1px solid #666;
-}
-
-/* En modo oscuro, invertir imágenes de íconos */
-body.dark-mode nav img, 
-body.dark-mode .icono-accesibilidad {
-    filter: invert(1);
-}
-
-/* Estilos del menú de accesibilidad */
-.accesibilidad {
-    position: relative;
-    display: inline-block;
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-.accesibilidad-menu {
-    display: none;
-    position: absolute;
-    right: 0;
-    background: white;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: 170px;
-    z-index: 10;
-}
-
-body.dark-mode .accesibilidad-menu {
-    background: #2a2a2a;
-    color: white;
-}
-
-.accesibilidad-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
-
-body.dark-mode .accesibilidad-menu a {
-    color: white;
-}
-
-.accesibilidad-menu a:hover {
-    background: #f0f0f0;
-}
-
-body.dark-mode .accesibilidad-menu a:hover {
-    background: #555;
-}
-
-/* Estilo para el menú adicional */
-.menu-adicional {
-    position: relative;
-    display: inline-block;
-    margin-left: 10px;
-}
-
-.menu-adicional-menu {
-    display: none;
-    position: absolute;
-    right: 0;
-    background: white;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    width: 170px;
-    z-index: 10;
-}
-
-body.dark-mode .menu-adicional-menu {
-    background: #2a2a2a;
-    color: white;
-}
-
-.menu-adicional-menu a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
-
-body.dark-mode .menu-adicional-menu a {
-    color: white;
-}
-
-.menu-adicional-menu a:hover {
-    background: #f0f0f0;
-}
-
-body.dark-mode .menu-adicional-menu a:hover {
-    background: #555;
+    color: #f00; /* Cambia de color cuando se pasa el cursor */
 }
