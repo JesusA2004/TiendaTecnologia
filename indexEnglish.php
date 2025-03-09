@@ -253,5 +253,23 @@
 
         // Rest of the original scripts remain the same...
     </script>
+
+    <script>
+            document.getElementById("icono-usuario").addEventListener("click", function () {
+                document.getElementById("formularioRegistro").style.display = "flex"; // Mostrar con "flex" para centrarlo
+            });
+
+            function cerrarFormulario() {
+                document.getElementById("formularioRegistro").style.display = "none"; // Ocultar el formulario
+            }
+
+            document.querySelectorAll('.pregunta h3').forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    parent.classList.toggle('active');
+                });
+            });
+
+        </script>
 </body>
 </html>

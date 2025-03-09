@@ -240,8 +240,6 @@
     </script>
 
 
-
-
     <script src="<?php echo JS_URL; ?>/login.js"></script>
     
     <script>
