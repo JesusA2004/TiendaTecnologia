@@ -42,7 +42,7 @@
                     <span class="menu-item">Más opciones ▼</span>
                     <div class="desplegable-contenido">
                         <a href="#" id="modo-oscuro-toggle">Modo oscuro</a>
-                        <a href="indexEnglish.php" id="cambiar-idioma">Cambiar a English</a>
+                        <a href="indexEnglish.php" id="cambiar-idioma">Cambiar a Ingles</a>
                         <a href="URL_DE_MARIO" id="mario-link">Mario</a>
                     </div>
                 </div>
