@@ -6,8 +6,18 @@
     --color-fondo: #f8f9fa;
     --color-texto: #2c3e50;
     --color-borde: #dee2e6;
+    --color-titulos: #00096e;
     --sombra: 0 4px 20px rgba(0, 0, 0, 0.1);
     --transicion-rapida: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Variables para modo oscuro */
+body.dark-mode {
+    --color-fondo: #1e1e1e;
+    --color-texto: #f1f1f1;
+    --color-borde: #444;
+    --color-titulos: #ffdf6b;
+    --sombra: 0 4px 20px rgba(255, 255, 255, 0.1);
 }
 
 html {
@@ -54,6 +64,15 @@ main{
     gap: 2rem;
     align-items: center;
 }
+
+/* Estilo para el ícono de preguntas frecuentes */
+.faq-icono {
+    width: 25px; /* Tamaño del ícono más pequeño */
+    height: 25px; /* Tamaño del ícono más pequeño */
+    margin-left: 8px; /* Espaciado entre el texto y el ícono */
+    vertical-align: middle; /* Alineación vertical para que esté al mismo nivel que el texto */
+}
+
 
 .menu-item {
     color: rgb(20, 20, 20);
@@ -263,10 +282,24 @@ body.dark-mode .desplegable-contenido a:hover {
 }
 .texto {
     text-align: center; /* Centra el texto */
+    font-size: 16px;
+}
+
+.texto p{
+    text-align: center; /* Centra el texto */
+    font-size: 16px;
 }
 
 .texto h2{
-    color:var(--color-primario); /* Centra el texto */
+    color:var(--color-titulos); /* Centra el texto */
+}
+
+.texto h2 {
+    color: var(--color-titulos); /* El color principal */
+    font-size: 2.5rem; /* Ajusta el tamaño de la fuente según tu preferencia */
+    margin-bottom: 1rem; /* Espacio debajo del título */
+    text-align: center; /* Asegura que el texto esté centrado */
+    font-weight: 600; /* Puedes ajustar el peso si lo necesitas */
 }
 
 .categoria-container {
@@ -283,7 +316,8 @@ body.dark-mode .desplegable-contenido a:hover {
     transition: var(--transicion-rapida);
     position: relative;
     width: 100%;
-    max-width: 350px;
+    max-width: 400px;
+    padding: 1.5rem 2rem;
 }
 
 .categoria:hover {
@@ -303,11 +337,11 @@ body.dark-mode .desplegable-contenido a:hover {
 }
 
 .categoria-content {
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
 }
 
 .categoria p {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     margin: 0.75rem 0;
     color: var(--color-texto);
@@ -333,6 +367,7 @@ body.dark-mode .desplegable-contenido a:hover {
     cursor: pointer;
     font-weight: 500;
     transition: var(--transicion-rapida);
+    margin-left: 120px;
 }
 
 .categoria button:hover {
@@ -359,7 +394,7 @@ body.dark-mode .desplegable-contenido a:hover {
 
 .card-sobre-nosotros h2 {
     font-size: 2.5rem;
-    color: var(--color-primario);
+    color: var(--color-titulos);
     margin-bottom: 2rem;
     position: relative;
 }
@@ -395,6 +430,8 @@ body.dark-mode .desplegable-contenido a:hover {
 
 .miembro p, ul{
     text-align: justify;
+    font-size: 16px;
+    
 }
 
 .miembro:hover {
@@ -405,34 +442,8 @@ body.dark-mode .desplegable-contenido a:hover {
 .miembro img {
     width: 50px;
     height: 50px;
-    
     object-fit: cover;
-   
     margin-bottom: 1rem;
-}
-
-/* Modo oscuro mejorado */
-body.dark-mode {
-    --color-fondo: #121212;
-    --color-texto: #e0e0e0;
-    --color-borde: #2d2d2d;
-}
-
-body.dark-mode .categoria {
-    background: #1e1e1e;
-}
-
-body.dark-mode .card-sobre-nosotros {
-    background: #2d2d2d;
-}
-
-body.dark-mode header {
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-}
-
-body.dark-mode .categoria button {
-    background: #2d2d2d;
-    border: 1px solid #3d3d3d;
 }
 
 /* Menús desplegables mejorados */
@@ -585,3 +596,112 @@ button:focus, input:focus, a:focus {
 .cerrar:hover {
     color: #f00; /* Cambia de color cuando se pasa el cursor */
 }
+
+/* Estilo para la sección de preguntas frecuentes */
+#faq {
+    padding: 40px 0;
+    background-color: #f8f8f8;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card-faq {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card-faq h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #072084;
+    margin-bottom: 20px;
+}
+
+.pregunta {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.pregunta h3 {
+    font-size: 16px;
+    color: #131313;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.pregunta h3:hover {
+    color: #e79303e4;
+}
+
+.pregunta p {
+    font-size: 1em;
+    color: #555;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.pregunta:last-child {
+    border-bottom: none;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .card-faq {
+        padding: 15px;
+    }
+
+    .card-faq h2 {
+        font-size: 1.6em;
+    }
+
+    .pregunta h3 {
+        font-size: 1.1em;
+    }
+}
+
+/* Efecto para mostrar y ocultar las respuestas */
+.pregunta p {
+    display: none;
+    margin-top: 10px;
+}
+
+.pregunta.active p {
+    display: block;
+}
+
+.modo-oscuro {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.modo-oscuro header, 
+.modo-oscuro nav, 
+.modo-oscuro .menu-principal,
+.modo-oscuro .categorias,
+.modo-oscuro .menu-item,
+.modo-oscuro .card-sobre-nosotros, .modo-oscuro .equipo,
+.modo-oscuro .miembro,
+.modo-oscuro .sobre-nosotros,
+.modo-oscuro .categoria-container, 
+.modo-oscuro .preguntas-frecuentes {
+    background-color: #282828;
+    color: #ffffff;
+}
+
+.modo-oscuro a {
+    color: #bb86fc;
+}
+
+.modo-oscuro .menu-item {
+    color: white;
+}
+
+
+
+

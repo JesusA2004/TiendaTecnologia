@@ -1,46 +1,114 @@
 footer {
-    background-color: #111111;
+    background-color: #111;
     color: white;
-    padding: 20px 0;
+    padding: 40px 0;
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 .footer-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
     max-width: 1200px;
     margin: auto;
+    padding: 20px;
 }
 
 .footer-section {
     flex: 1;
     min-width: 250px;
     margin: 10px;
+    text-align: left;
 }
 
 .footer-section h3 {
     font-size: 18px;
     margin-bottom: 10px;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 5px;
 }
 
-.footer-section p {
+.footer-section p,
+.footer-section ul {
     font-size: 14px;
     line-height: 1.5;
 }
 
-.social-icons img, .payment-methods img {
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Redes Sociales */
+.social-icons {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.social-icons img {
     width: 40px;
-    margin: 5px;
+    transition: transform 0.3s ease, filter 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+/* Métodos de Pago */
+.payment-methods {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+.payment-methods img {
+    width: 50px;
     transition: transform 0.3s ease;
 }
 
-.social-icons img:hover, .payment-methods img:hover {
+.payment-methods img:hover {
     transform: scale(1.1);
 }
 
+/* Texto de derechos reservados */
 .footer-copy {
     margin-top: 20px;
     font-size: 12px;
     opacity: 0.7;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 10px;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-section {
+        text-align: center;
+    }
+
+    .social-icons, .payment-methods {
+        justify-content: center;
+    }
 }
