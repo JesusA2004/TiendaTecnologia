@@ -15,6 +15,14 @@
 
     <header>
         <h1>CyberStore</h1>
+
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <nav>
             <div class="menu-principal">
                 <input id="buscar" type="text" placeholder="Buscar productos o más..." class="busqueda-usuario">
@@ -34,13 +42,11 @@
                     <span class="menu-item">Más opciones ▼</span>
                     <div class="desplegable-contenido">
                         <a href="#" id="modo-oscuro-toggle">Modo oscuro</a>
-                        <a href="indexEnglish.php" id="cambiar-idioma">Change to English</a>
+                        <a href="indexEnglish.php" id="cambiar-idioma">Cambiar a English</a>
                         <a href="URL_DE_MARIO" id="mario-link">Mario</a>
-
                     </div>
                 </div>
 
-                        
                 <img id="icono-usuario" src="<?php echo BASE_URL; ?>/Public/Resources/registrar.png" alt="Usuario">
             </div>
         </nav>
@@ -58,8 +64,8 @@
                 <img src="<?php echo BASE_URL; ?>/Public/Resources/carrusel2.jpg" alt="Producto 2" class="carrusel-img">
                 <img src="<?php echo BASE_URL; ?>/Public/Resources/carrusel3.png" alt="Producto 3" class="carrusel-img">
             </div>
-            <button class="carrusel-btn prev" onclick="cambiarImagen(-1)">&#10094;</button>
-            <button class="carrusel-btn next" onclick="cambiarImagen(1)">&#10095;</button>
+            <button class="carrusel-btn prev">&#10094;</button>
+            <button class="carrusel-btn next">&#10095;</button>
         </section>
 
         <section id="nosotros" class="sobre-nosotros">
@@ -213,52 +219,7 @@
     </main>
 
     <?php require_once __DIR__ . '/Includes/Footer.php'; ?>
-    <script src="<?php echo JS_URL; ?>/login.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const toggleModoOscuro = document.getElementById("modo-oscuro-toggle");
-            const body = document.body;
-
-            // Verificar si el usuario tenía activado el modo oscuro previamente
-            if (localStorage.getItem("modoOscuro") === "activado") {
-                body.classList.add("modo-oscuro");
-            }
-
-            toggleModoOscuro.addEventListener("click", function (e) {
-                e.preventDefault();
-                body.classList.toggle("modo-oscuro");
-
-                // Guardar preferencia en localStorage
-                if (body.classList.contains("modo-oscuro")) {
-                    localStorage.setItem("modoOscuro", "activado");
-                } else {
-                    localStorage.setItem("modoOscuro", "desactivado");
-                }
-            });
-        });
-    </script>
-
-
-    <script src="<?php echo JS_URL; ?>/login.js"></script>
-    
-    <script>
-        document.getElementById("icono-usuario").addEventListener("click", function () {
-            document.getElementById("formularioRegistro").style.display = "flex"; // Mostrar con "flex" para centrarlo
-        });
-
-        function cerrarFormulario() {
-            document.getElementById("formularioRegistro").style.display = "none"; // Ocultar el formulario
-        }
-
-        document.querySelectorAll('.pregunta h3').forEach(item => {
-            item.addEventListener('click', () => {
-                const parent = item.parentElement;
-                parent.classList.toggle('active');
-            });
-        });
-
-    </script>
+    <script src="<?php echo JS_URL; ?>/Principal.js"></script>
 
 </body>
 </html>
