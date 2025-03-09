@@ -5,7 +5,7 @@
         
         <div class="footer-section">
             <h3>Sobre Nosotros</h3>
-            <p>CyberStore es tu tienda de tecnología de confianza. Ofrecemos laptops, tablets y refrigeradores con la mejor calidad y servicio.</p>
+            <p align="justify">CyberStore es tu tienda de tecnología de confianza. Ofrecemos laptops, tablets y refrigeradores con la mejor calidad y servicio.</p>
         </div>
         <div class="footer-section">
             <h3>Menú</h3>

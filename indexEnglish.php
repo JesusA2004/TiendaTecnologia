@@ -250,8 +250,6 @@
         if (localStorage.getItem("language") === "es") {
             toggleLanguage();
         }
-
-        // Rest of the original scripts remain the same...
     </script>
 
     <script>

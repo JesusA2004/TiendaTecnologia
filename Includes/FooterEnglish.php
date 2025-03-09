@@ -5,7 +5,7 @@
         
         <div class="footer-section">
             <h3>About Us</h3>
-            <p>CyberStore is your trusted technology store. We offer laptops, tablets, and refrigerators with the best quality and service.</p>
+            <p align="justify">CyberStore is your trusted technology store. We offer laptops, tablets, and refrigerators with the best quality and service.</p>
         </div>
         
         <div class="footer-section">

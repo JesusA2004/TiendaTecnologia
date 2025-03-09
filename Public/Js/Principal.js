@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    
 });
 
 const carrusel = {
@@ -78,7 +77,6 @@ const carrusel = {
             `translateX(-${this.currentIndex * 100}%)`;
         this.updateIndicadores();
     },
-    // ... resto de funciones del carrusel
 };
 
 document.addEventListener('DOMContentLoaded', () => carrusel.init());
