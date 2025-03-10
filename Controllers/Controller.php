@@ -25,11 +25,18 @@
 
     // Manejo del formulario
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $nombre = $_POST["nombre"];
-        $correo = $_POST["correo"];
-        $telefono = $_POST["telefono"];
-        $direccion = $_POST["direccion"];
-        $contrasena = password_hash($_POST["contrasena"], PASSWORD_BCRYPT); // Encripta la contraseña
+        // Verificar que los campos no estén vacíos
+        if (empty($_POST["nombre"]) || empty($_POST["correo"]) || empty($_POST["telefono"]) || 
+            empty($_POST["direccion"]) || empty($_POST["contrasena"])) {
+            echo "<script>alert('Todos los campos son obligatorios.'); window.history.back();</script>";
+            exit;
+        }
+
+        $nombre = trim($_POST["nombre"]);
+        $correo = trim($_POST["correo"]);
+        $telefono = trim($_POST["telefono"]);
+        $direccion = trim($_POST["direccion"]);
+        $contrasena = trim($_POST["contrasena"]); // Ahora la contraseña se almacena tal cual
 
         $controlador = new Controller();
         $resultado = $controlador->agregarCliente($nombre, $correo, $telefono, $direccion, $contrasena);

@@ -1,29 +1,25 @@
 <?php
-class BdConection {
-    private static $conn;
+    class BdConection {
+        private static $conn;
 
-    // Método estático para obtener la conexión a la base de datos
-    public static function getConnection() {
-        if (self::$conn === null) {
-            // Datos de la conexión
-            self::$conn = mysqli_connect(
-                'localhost',
-                'root',
-                '',
-                'bdTienda'
-            );
+        public static function getConnection() {
+            if (self::$conn === null) {
+                // 1. Elimina el mensaje de éxito (interfiere con redirecciones)
+                self::$conn = mysqli_connect(
+                    'localhost', 
+                    'ktkswgfb__nMrsLg3WnAqXZtnM775odxRw-yB9HM7G',
+                    '',
+                    'ktkswgfb_bdTienda'
+                );
 
-            // Comprobar si la conexión fue exitosa
-            if (!self::$conn) {
-                // Guardamos el error en la sesión
-                $_SESSION["mensaje_error"] = "Error al conectar con la base de datos: " . mysqli_connect_error();
-                // Redirigir al usuario a la página de login
-                header("Location: ../index.php");
-                exit;
+                // 2. Verifica errores de conexión
+                if (!self::$conn) {
+                    // Registra el error en logs (no en pantalla)
+                    error_log("Error de conexión: " . mysqli_connect_error());
+                    return false;
+                }
             }
+            return self::$conn;
         }
-
-        return self::$conn;
     }
-}
 ?>
