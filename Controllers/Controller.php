@@ -8,6 +8,7 @@
 
         public function __construct() {
             $this->modelo = new Model();
+            
         }
 
         public function listarClientes() {
@@ -21,6 +22,7 @@
         public function obtenerCliente($id) {
             return $this->modelo->obtenerClientePorId($id);
         }
+    
     }
 
     // Manejo del formulario
@@ -47,4 +49,6 @@
             echo "<script>alert('Error al registrar'); window.history.back();</script>";
         }
     }
+
+   
 ?>

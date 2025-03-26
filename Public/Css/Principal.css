@@ -779,6 +779,28 @@ button:focus, input:focus, a:focus {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.menu-toggle {
+    z-index: 1100; /* O el valor que uses */
+}
+
+.logo {
+    z-index: 1200; /* Asegura que el logo esté por encima del menú */
+}
+
+/* Animación para el botón de menú cuando se activa */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg);
+    margin-top: 5px;
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    margin-bottom: 5px;
+}
+
+/* Menú en dispositivos móviles */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -801,6 +823,7 @@ button:focus, input:focus, a:focus {
     }
 }
 
+/* Animación de deslizamiento del menú */
 @keyframes slideDown {
     from {
         opacity: 0;
@@ -814,6 +837,11 @@ button:focus, input:focus, a:focus {
 
 header:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos adicionales para mejorar la experiencia del menú */
+body.active-menu {
+    overflow: hidden; /* Previene el desplazamiento de la página cuando el menú está abierto */
 }
 
 /* ===================================================== */
@@ -1405,4 +1433,11 @@ body.dark-mode .desplegable-contenido a:hover {
 
 .carrusel-img.activa {
     opacity: 1;
+} 
+
+.logo {
+    position: fixed; /* o absolute, dependiendo de tu diseño */
+    top: 20px; /* ajusta según sea necesario */
+    left: 20px; /* ajusta según sea necesario */
+    z-index: 1000; /* Asegura que esté por encima del menú */
 }

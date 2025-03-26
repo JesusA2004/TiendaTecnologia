@@ -14,7 +14,7 @@
 <body>
 
     <header>
-        <h1>CyberStore</h1>
+        <img src="<?php echo BASE_URL; ?>/Public/Resources/Logo.png" width="150" alt="Logo CyberStore" class="logo">
 
         <!-- Botón hamburguesa -->
         <button class="menu-toggle">
@@ -25,7 +25,6 @@
 
         <nav>
             <div class="menu-principal">
-                <input id="buscar" type="text" placeholder="Buscar productos o más..." class="busqueda-usuario">
 
                 <a href="#inicio" class="menu-item">Inicio</a>
                 <a href="#nosotros" class="menu-item">Sobre nosotros</a>
@@ -43,7 +42,8 @@
                     <div class="desplegable-contenido">
                         <a href="#" id="modo-oscuro-toggle">Modo oscuro</a>
                         <a href="indexEnglish.php" id="cambiar-idioma">Cambiar a Ingles</a>
-                        <a href="URL_DE_MARIO" id="mario-link">Mario</a>
+                        <a href="https://lesgolfclub.netlify.app" id="mario-link">Equipo de Mario</a>
+                        <a href="Views/quejas.php" id="quejas">Quejas</a>
                     </div>
                 </div>
 
@@ -122,19 +122,16 @@
                     <img src="<?php echo BASE_URL; ?>/Public/Resources/laptops.jpg" alt="Laptops">
                     <h3 class="traducible">Laptops</h3>
                     <p class="traducible">Experimenta la potencia y la portabilidad en la palma de tu mano. Nuestras laptops están diseñadas para acompañarte en cada paso, desde el trabajo hasta el entretenimiento, con un rendimiento que no te decepcionará.</p>
-                    <button class="traducible">Ver más</button>
                 </div>
                 <div class="categoria">
                     <img src="<?php echo BASE_URL; ?>/Public/Resources/refrigeradores.jpg" alt="Refrigeradores">
                     <h3 class="traducible">Refrigeradores</h3>
                     <p class="traducible">Mantén tus alimentos frescos y organizados con nuestros refrigeradores de última generación. Tecnología avanzada que asegura eficiencia energética, espacio optimizado y un diseño elegante para tu hogar.</p>
-                    <button class="traducible">Ver más</button>
                 </div>
                 <div class="categoria">
                     <img src="<?php echo BASE_URL; ?>/Public/Resources/tablets.png" alt="Tablets">
                     <h3 class="traducible">Tablets</h3>
                     <p class="traducible">Descubre la versatilidad que solo una tablet puede ofrecerte. Ligera, rápida y con una pantalla de calidad superior, perfecta para todas tus tareas diarias, tanto en el hogar como en movimiento.</p>
-                    <button class="traducible">Ver más</button>
                 </div>
             </div>     
         </section>

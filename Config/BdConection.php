@@ -7,9 +7,9 @@
                 // 1. Elimina el mensaje de éxito (interfiere con redirecciones)
                 self::$conn = mysqli_connect(
                     'localhost', 
-                    'ktkswgfb__nMrsLg3WnAqXZtnM775odxRw-yB9HM7G',
+                    'root',
                     '',
-                    'ktkswgfb_bdTienda'
+                    'tienda'
                 );
 
                 // 2. Verifica errores de conexión

@@ -14,8 +14,15 @@
 <body>
 
     <header>
-        <h1>CyberStore</h1>
+        <img src="<?php echo BASE_URL; ?>/Public/Resources/Logo.png" width="150" alt="Logo CyberStore" class="logo">
 
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
         <!-- Botón hamburguesa -->
         <button class="menu-toggle">
             <span></span>
@@ -25,7 +32,6 @@
 
         <nav>
             <div class="menu-principal">
-                <input id="buscar" type="text" placeholder="Search for products or more..." class="busqueda-usuario">
 
                 <a href="#inicio" class="menu-item">Home</a>
                 <a href="#nosotros" class="menu-item">About Us</a>
@@ -43,7 +49,7 @@
                     <div class="desplegable-contenido">
                         <a href="#" id="modo-oscuro-toggle">Dark mode</a>
                         <a href="index.php" id="cambiar-idioma">Change to Spanish</a>
-                        <a href="URL_DE_MARIO" id="mario-link">Mario</a>
+                        <a href="https://lesgolfclub.netlify.app" id="mario-link">Mario</a>
                     </div>
                 </div>
 
