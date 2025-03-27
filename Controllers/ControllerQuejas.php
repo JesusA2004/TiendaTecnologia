@@ -14,6 +14,14 @@
         public function agregarQueja($nombre, $correo, $tipo, $mensaje) {
             return $this->modelo->insertarQueja($nombre, $correo, $tipo, $mensaje);
         }
+
+        // Método para consultar las quejas
+        public function consultarQueja() {
+            // Obtener las quejas desde el modelo
+            $quejas = $this->modelo->obtenerQuejas();
+            return $quejas;
+        }
+        
     }
 
     // Manejo del formulario de quejas

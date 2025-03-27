@@ -15,6 +15,10 @@ body {
     border-top: 5px solid #ffc107;
 }
 
+.container {
+    margin-top: 110px; /* Puedes ajustar el valor según tu preferencia */
+}
+
 h2 {
     color: #333;
     text-align: center;
@@ -57,4 +61,85 @@ button {
 
 button:hover {
     background-color: #e0a800;
+}
+
+/* Contenedor para centrar la tabla */
+.table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Estilos para la tabla de quejas */
+#tablaQuejas {
+    width: 90%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo para encabezados */
+#tablaQuejas thead {
+    background-color: #e0a800;
+    color: white;
+    text-align: left;
+}
+
+/* Estilo para filas y celdas */
+#tablaQuejas th, #tablaQuejas td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Estilo para filas alternas */
+#tablaQuejas tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover para filas */
+#tablaQuejas tbody tr:hover {
+    background-color: #e0f7fa;
+    cursor: pointer;
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    #tablaQuejas, #tablaQuejas thead, #tablaQuejas tbody, #tablaQuejas th, #tablaQuejas td, #tablaQuejas tr {
+        display: block;
+        width: 100%;
+    }
+
+    #tablaQuejas thead {
+        display: none;
+    }
+
+    #tablaQuejas tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    #tablaQuejas td {
+        text-align: left;
+        padding: 10px;
+        border: none;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    #tablaQuejas td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        font-weight: bold;
+        color: #e0a800;
+    }
 }

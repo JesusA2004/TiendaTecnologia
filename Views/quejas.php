@@ -1,5 +1,11 @@
 <?php 
     require_once __DIR__ . '/../Config/Routes.php';
+
+    require_once __DIR__ . '/../Controllers/ControllerQuejas.php';
+    
+    $controlador = new Controller();
+    $quejas = $controlador->consultarQueja();
+    
 ?>
 
 <!DOCTYPE html>
@@ -8,10 +14,50 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="<?php echo CSS_URL; ?>/quejas.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Principal.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Quejas y Sugerencias</title>
 </head>
 <body>
+<header>
+        <img href="#inicio" src="<?php echo BASE_URL; ?>/Public/Resources/Logo.png" width="150" alt="Logo CyberStore" class="logo">
+
+        <!-- Botón hamburguesa -->
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav>
+            <div class="menu-principal">
+
+                <a href="#inicio" class="menu-item">Inicio</a>
+                <a href="#nosotros" class="menu-item">Sobre nosotros</a>
+                <a href="#productos" class="menu-item">Productos</a>
+                
+                <a href="#faq" class="menu-item">
+                    Preguntas frecuentes  <img src="<?php echo BASE_URL; ?>/Public/Resources/preguntaIcon.png" alt="iconFaq" class="faq-icono">
+                </a>
+
+                <a href="#contacto" class="menu-item">Contacto</a>
+                
+                <!-- Menú desplegable simplificado -->
+                <div class="menu-desplegable">
+                    <span class="menu-item">Más opciones ▼</span>
+                    <div class="desplegable-contenido">
+                        <a href="#" id="modo-oscuro-toggle">Modo oscuro</a>
+                        <a href="indexEnglish.php" id="cambiar-idioma">Cambiar a Ingles</a>
+                        <a href="https://lesgolfclub.netlify.app" id="mario-link">Equipo de Mario</a>
+                        <a href="Views/quejas.php" id="quejas">Quejas</a>
+                    </div>
+                </div>
+
+                <img id="icono-usuario" src="<?php echo BASE_URL; ?>/Public/Resources/registrar.png" alt="Usuario">
+            </div>
+        </nav>
+    </header>
+
     <div class="container">
         <h2>Envíanos tus comentarios</h2>
         <form id="formQuejas" action="../Controllers/ControllerQuejas.php" method="POST">
@@ -33,6 +79,58 @@
 
             <button type="submit">Enviar</button>
         </form>
-    </div>
+
+        <!-- Botón para mostrar la tabla de quejas -->
+        <button onclick="mostrarTablaQuejas()">Mostrar Quejas</button>
+
+
+
+        <!-- Tabla de quejas -->
+        <div class="table-container">
+            <table id="tablaQuejas" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Tipo</th>
+                        <th>Mensaje</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (!empty($quejas)): ?>
+                        <?php foreach ($quejas as $queja): ?>
+                            <tr>
+                                <td data-label="ID"><?php echo $queja['id']; ?></td>
+                                <td data-label="Nombre"><?php echo $queja['nombre']; ?></td>
+                                <td data-label="Correo"><?php echo $queja['correo']; ?></td>
+                                <td data-label="Tipo"><?php echo $queja['tipo']; ?></td>
+                                <td data-label="Mensaje"><?php echo $queja['mensaje']; ?></td>
+                                <td data-label="Fecha"><?php echo $queja['fecha']; ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <tr><td colspan="6" style="text-align: center;">No hay quejas registradas.</td></tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+        </div>
+
+
+    <!-- Script para mostrar/ocultar la tabla -->
+    <script>
+        function mostrarTablaQuejas() {
+            var tabla = document.getElementById('tablaQuejas');
+            
+            // Verificar si la tabla está oculta o visible
+            if (tabla.style.display === 'none' || tabla.style.display === '') {
+                tabla.style.display = 'block'; // Mostrar tabla si está oculta
+            } else {
+                tabla.style.display = 'none'; // Ocultar tabla si está visible
+            }
+        }
+    </script>
+
 </body>
 </html>
