@@ -58,9 +58,14 @@
                 <img src="<?php echo BASE_URL; ?>/Public/Resources/carrusel1.jpg" alt="Producto 1" class="carrusel-img activa">
                 <div class="carrusel-texto">
                     <h2>Bienvenidos a CyberStore</h2>
-                    <p>Tu tienda de tecnología online.</p>
+                    <p>Tu tienda de tecnología online.</p>                 
                 </div>
-                
+                <!-- Banner de promociones con cuenta regresiva -->
+                 <div id="promo-countdown">
+                    🚀 ¡Oferta por tiempo limitado! 🛍️ 💥 Ahorra en grande, pero date prisa: <span id="countdown"></span> ⏳ ¡Compra ya!
+                </div>
+
+                    
                 <img src="<?php echo BASE_URL; ?>/Public/Resources/carrusel2.jpg" alt="Producto 2" class="carrusel-img">
                 <img src="<?php echo BASE_URL; ?>/Public/Resources/carrusel3.png" alt="Producto 3" class="carrusel-img">
             </div>
@@ -121,16 +126,19 @@
                 <div class="categoria">
                     <img src="<?php echo BASE_URL; ?>/Public/Resources/laptops.jpg" alt="Laptops">
                     <h3 class="traducible">Laptops</h3>
+                    <p class="precio"><strong>Desde $10,999.00 MXN</strong></p>
                     <p class="traducible">Experimenta la potencia y la portabilidad en la palma de tu mano. Nuestras laptops están diseñadas para acompañarte en cada paso, desde el trabajo hasta el entretenimiento, con un rendimiento que no te decepcionará.</p>
                 </div>
                 <div class="categoria">
                     <img src="<?php echo BASE_URL; ?>/Public/Resources/refrigeradores.jpg" alt="Refrigeradores">
                     <h3 class="traducible">Refrigeradores</h3>
+                    <p class="precio"><strong>Desde $8,999.00 MXN</strong></p>
                     <p class="traducible">Mantén tus alimentos frescos y organizados con nuestros refrigeradores de última generación. Tecnología avanzada que asegura eficiencia energética, espacio optimizado y un diseño elegante para tu hogar.</p>
                 </div>
                 <div class="categoria">
                     <img src="<?php echo BASE_URL; ?>/Public/Resources/tablets.png" alt="Tablets">
                     <h3 class="traducible">Tablets</h3>
+                    <p class="precio"><strong>Desde $5,999.00 MXN</strong></p>
                     <p class="traducible">Descubre la versatilidad que solo una tablet puede ofrecerte. Ligera, rápida y con una pantalla de calidad superior, perfecta para todas tus tareas diarias, tanto en el hogar como en movimiento.</p>
                 </div>
             </div>     

@@ -42,19 +42,17 @@ body {
 /* Header */
 header {
     background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
     box-shadow: var(--sombra);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 0; /* Lo fija en la parte superior */
-    left: 0; /* Alineado al lado izquierdo */
-    right: 0; /* Alineado al lado derecho */
-    z-index: 1000; /* Asegura que el encabezado esté por encima de otros elementos */
-    width: 100%; /* Asegura que ocupe todo el ancho de la página */
-    margin-top: 0; /* Evita que haya espacio adicional arriba */
-    animation: headerAppear 0.5s ease-out; /* Animación de aparición */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    justify-content: space-between;
 }
 
 @keyframes headerAppear {
@@ -70,6 +68,13 @@ header {
 
 main {
     padding-top: 80px;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 4rem; /* Espacio entre logo y menú */
 }
 
 .menu-principal {
@@ -336,6 +341,25 @@ body.dark-mode .desplegable-contenido a:hover {
     transform: translateY(-50%) scale(1.1);
 }
 
+
+/*CONTEO REGRESIVO*/
+.carrusel-contenedor {
+    position: relative; /* Permite posicionar elementos absolutos dentro */
+}
+#promo-countdown {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(244, 175, 0, 0.7);
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    z-index: 10;
+    text-align: center;
+}
+
 /* Sección de categorías rediseñada */
 .categorias {
     display: flex;
@@ -425,6 +449,14 @@ body.dark-mode .desplegable-contenido a:hover {
     color: var(--color-texto);
     text-align: justify;
 }
+
+.categoria .precio {
+    font-size: 1rem;
+    color: var(--color-titulos);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
 .categoria h3 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -523,6 +555,7 @@ body.dark-mode .desplegable-contenido a:hover {
     object-fit: cover;
     margin-bottom: 1rem;
 }
+
 
 /* Menús desplegables mejorados */
 .accesibilidad-menu, .menu-adicional-menu {
@@ -785,6 +818,8 @@ button:focus, input:focus, a:focus {
 
 .logo {
     z-index: 1200; /* Asegura que el logo esté por encima del menú */
+    width: 150px;
+    height: auto;
 }
 
 /* Animación para el botón de menú cuando se activa */

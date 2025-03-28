@@ -114,4 +114,29 @@ document.addEventListener('DOMContentLoaded', () => {
             parent.classList.toggle('active');
         });
     });
+
+    /*CONTEO REGRESIVO*/
+    // Fecha objetivo para la promoción (ejemplo: 31 de diciembre de 2025)
+    var countDownDate = new Date("Dec 31, 2025 23:59:59").getTime();
+
+    // Actualiza el contador cada segundo
+    var countdownfunction = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = countDownDate - now;
+
+        // Cálculos para días, horas, minutos y segundos
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Actualiza el elemento con id "countdown"
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+        // Cuando la cuenta regresiva termine, muestra un mensaje
+        if (distance < 0) {
+            clearInterval(countdownfunction);
+            document.getElementById("countdown").innerHTML = "¡Oferta Expirada!";
+        }
+    }, 1000);
 });
