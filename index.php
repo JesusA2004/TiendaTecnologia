@@ -14,24 +14,31 @@
 <body>
 
     <header>
-        <img src="<?php echo BASE_URL; ?>/Public/Resources/Logo.png" width="150" alt="Logo CyberStore" class="logo">
+        <!-- Logo a la izquierda -->
+        <img 
+            src="<?php echo BASE_URL; ?>/Public/Resources/Logo.png" 
+            width="150" 
+            alt="Logo CyberStore" 
+            class="logo"
+        >
 
-        <!-- Botón hamburguesa -->
+        <!-- Botón hamburguesa (oculto en desktop, visible en móvil) -->
         <button class="menu-toggle">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
+        <!-- Navegación -->
         <nav>
             <div class="menu-principal">
-
                 <a href="#inicio" class="menu-item">Inicio</a>
                 <a href="#nosotros" class="menu-item">Sobre nosotros</a>
                 <a href="#productos" class="menu-item">Productos</a>
                 
                 <a href="#faq" class="menu-item">
-                    Preguntas frecuentes  <img src="<?php echo BASE_URL; ?>/Public/Resources/preguntaIcon.png" alt="iconFaq" class="faq-icono">
+                    Preguntas frecuentes  
+                    <img src="<?php echo BASE_URL; ?>/Public/Resources/preguntaIcon.png" alt="iconFaq" class="faq-icono">
                 </a>
 
                 <a href="#contacto" class="menu-item">Contacto</a>
@@ -47,7 +54,12 @@
                     </div>
                 </div>
 
-                <img id="icono-usuario" src="<?php echo BASE_URL; ?>/Public/Resources/registrar.png" alt="Usuario">
+                <!-- Ícono de usuario -->
+                <img 
+                    id="icono-usuario" 
+                    src="<?php echo BASE_URL; ?>/Public/Resources/registrar.png" 
+                    alt="Usuario"
+                >
             </div>
         </nav>
     </header>
@@ -55,19 +67,37 @@
     <main>
         <section class="carrusel" id="inicio">
             <div class="carrusel-contenedor">
-                <img src="<?php echo BASE_URL; ?>/Public/Resources/carrusel1.jpg" alt="Producto 1" class="carrusel-img activa">
+                <!-- Imagen principal -->
+                <img 
+                    src="<?php echo BASE_URL; ?>/Public/Resources/carrusel1.jpg" 
+                    alt="Producto 1" 
+                    class="carrusel-img activa"
+                >
+                
+                <!-- Título en blanco arriba -->
                 <div class="carrusel-texto">
                     <h2>Bienvenidos a CyberStore</h2>
                     <p>Tu tienda de tecnología online.</p>                 
                 </div>
-                <!-- Banner de promociones con cuenta regresiva -->
-                 <div id="promo-countdown">
-                    🚀 ¡Oferta por tiempo limitado! 🛍️ 💥 Ahorra en grande, pero date prisa: <span id="countdown"></span> ⏳ ¡Compra ya!
+                
+                <!-- Recuadro amarillo abajo del título -->
+                <div id="promo-countdown">
+                    🚀 ¡Oferta por tiempo limitado! 🛍️ 💥 
+                    Ahorra en grande, pero date prisa: 
+                    <span id="countdown"></span> ⏳ ¡Compra ya!
                 </div>
 
-                    
-                <img src="<?php echo BASE_URL; ?>/Public/Resources/carrusel2.jpg" alt="Producto 2" class="carrusel-img">
-                <img src="<?php echo BASE_URL; ?>/Public/Resources/carrusel3.png" alt="Producto 3" class="carrusel-img">
+                <!-- Otras imágenes del carrusel -->
+                <img 
+                    src="<?php echo BASE_URL; ?>/Public/Resources/carrusel2.jpg" 
+                    alt="Producto 2" 
+                    class="carrusel-img"
+                >
+                <img 
+                    src="<?php echo BASE_URL; ?>/Public/Resources/carrusel3.png" 
+                    alt="Producto 3" 
+                    class="carrusel-img"
+                >
             </div>
             <button class="carrusel-btn prev">&#10094;</button>
             <button class="carrusel-btn next">&#10095;</button>
@@ -90,27 +120,29 @@
                     <div class="miembro">
                         <img src="<?php echo BASE_URL; ?>/Public/Resources/mision.png" alt="CEO">
                         <h3>Misión</h3>
-                        <p>
-                            Nuestra misión es proporcionar productos tecnológicos de alta calidad que mejoren la vida de nuestros clientes, 
-                            brindando soluciones innovadoras y accesibles, siempre con un enfoque en la excelencia y la satisfacción del cliente.
+                        <p align="justify">
+                            Nuestra misión es proporcionar productos tecnológicos de alta calidad que mejoren la vida de 
+                            nuestros clientes, brindando soluciones innovadoras y accesibles, siempre con un enfoque en la 
+                            excelencia y la satisfacción del cliente.
                         </p>
                     </div>
                     <div class="miembro">
                         <img src="<?php echo BASE_URL; ?>/Public/Resources/vision.png" alt="Designer">
                         <h3>Visión</h3>
-                        <p>
-                            Nos esforzamos por ser la tienda online líder en tecnología, destacándonos por ofrecer productos de vanguardia 
-                            y un servicio excepcional, comprometidos con el desarrollo sostenible y el bienestar de nuestros clientes.
+                        <p align="justify">
+                            Nos esforzamos por ser la tienda online líder en tecnología, destacándonos por ofrecer productos 
+                            de vanguardia y un servicio excepcional, comprometidos con el desarrollo sostenible y el bienestar 
+                            de nuestros clientes.
                         </p>
                     </div>
                     <div class="miembro">
                         <img src="<?php echo BASE_URL; ?>/Public/Resources/valores.png" alt="Tech">
                         <h3>Valores</h3>
                         <ul>
-                            <li><strong>Innovación:</strong> Nos apasiona estar a la vanguardia de la tecnología y ofrecer lo mejor a nuestros clientes.</li>
-                            <li><strong>Compromiso:</strong> Nos comprometemos a brindar productos de calidad y un servicio al cliente impecable.</li>
-                            <li><strong>Responsabilidad:</strong> Actuamos con responsabilidad social y ambiental en todas nuestras operaciones.</li>
-                            <li><strong>Integridad:</strong> Operamos de manera ética, honesta y transparente en todas nuestras relaciones.</li>
+                            <li><strong>Innovación:</strong> Nos apasiona estar a la vanguardia de la tecnología.</li>
+                            <li><strong>Compromiso:</strong> Nos comprometemos a brindar productos de calidad.</li>
+                            <li><strong>Responsabilidad:</strong> Actuamos con responsabilidad social y ambiental.</li>
+                            <li><strong>Integridad:</strong> Operamos de manera ética, honesta y transparente.</li>
                         </ul>
                     </div>
                 </div>
@@ -120,38 +152,52 @@
         <section class="categorias" id="productos">
             <div class="texto">
                 <h2 class="traducible">¡Explora lo último en tecnología!</h2>
-                <p class="traducible">¿Estás listo para darle un upgrade a tu vida? Descubre productos que combinan estilo, rendimiento y funcionalidad para hacer de tu día a día algo extraordinario. ¡No busques más, tu próxima gran compra está aquí!</p>
+                <p class="traducible">
+                    ¿Estás listo para darle un upgrade a tu vida? Descubre productos que combinan estilo, 
+                    rendimiento y funcionalidad para hacer de tu día a día algo extraordinario. ¡No busques más, 
+                    tu próxima gran compra está aquí!
+                </p>
             </div>
             <div class="categoria-container">
                 <div class="categoria">
                     <img src="<?php echo BASE_URL; ?>/Public/Resources/laptops.jpg" alt="Laptops">
                     <h3 class="traducible">Laptops</h3>
                     <p class="precio"><strong>Desde $10,999.00 MXN</strong></p>
-                    <p class="traducible">Experimenta la potencia y la portabilidad en la palma de tu mano. Nuestras laptops están diseñadas para acompañarte en cada paso, desde el trabajo hasta el entretenimiento, con un rendimiento que no te decepcionará.</p>
+                    <p class="traducible">
+                        Experimenta la potencia y la portabilidad en la palma de tu mano. Nuestras laptops están diseñadas 
+                        para acompañarte en cada paso, desde el trabajo hasta el entretenimiento.
+                    </p>
                 </div>
                 <div class="categoria">
                     <img src="<?php echo BASE_URL; ?>/Public/Resources/refrigeradores.jpg" alt="Refrigeradores">
                     <h3 class="traducible">Refrigeradores</h3>
                     <p class="precio"><strong>Desde $8,999.00 MXN</strong></p>
-                    <p class="traducible">Mantén tus alimentos frescos y organizados con nuestros refrigeradores de última generación. Tecnología avanzada que asegura eficiencia energética, espacio optimizado y un diseño elegante para tu hogar.</p>
+                    <p class="traducible">
+                        Mantén tus alimentos frescos y organizados con nuestros refrigeradores de última generación. 
+                        Tecnología avanzada que asegura eficiencia energética y un diseño elegante.
+                    </p>
                 </div>
                 <div class="categoria">
                     <img src="<?php echo BASE_URL; ?>/Public/Resources/tablets.png" alt="Tablets">
                     <h3 class="traducible">Tablets</h3>
                     <p class="precio"><strong>Desde $5,999.00 MXN</strong></p>
-                    <p class="traducible">Descubre la versatilidad que solo una tablet puede ofrecerte. Ligera, rápida y con una pantalla de calidad superior, perfecta para todas tus tareas diarias, tanto en el hogar como en movimiento.</p>
+                    <p class="traducible">
+                        Descubre la versatilidad que solo una tablet puede ofrecerte. Ligera, rápida y con una pantalla 
+                        de calidad superior, perfecta para todas tus tareas diarias.
+                    </p>
                 </div>
             </div>     
         </section>
 
         <section id="faq" class="preguntas-frecuentes">
             <div class="card-faq">
-                <h2>Preguntas frecuentes  <img src="<?php echo BASE_URL; ?>/Public/Resources/preguntaIcon.png" alt="iconFaq"></h2>
-                
+                <h2>Preguntas frecuentes  
+                    <img src="<?php echo BASE_URL; ?>/Public/Resources/preguntaIcon.png" alt="iconFaq">
+                </h2>
                 
                 <div class="pregunta">
                     <h3>1. ¿Cómo puedo hacer un pedido?</h3>
-                    <p>Para hacer un pedido, simplemente navega por nuestras categorías de productos, elige el que desees y agrégalo al carrito. Luego, sigue el proceso de pago para completar tu compra.</p>
+                    <p>Para hacer un pedido, simplemente navega por nuestras categorías de productos, elige el que desees y agrégalo al carrito. Luego, sigue el proceso de pago.</p>
                 </div>
 
                 <div class="pregunta">
@@ -186,7 +232,7 @@
 
                 <div class="pregunta">
                     <h3>8. ¿Puedo cambiar un producto por otro?</h3>
-                    <p>Los cambios son posibles en el plazo de 30 días después de la compra, siempre y cuando el producto esté en condiciones originales. Para más detalles, contacta a nuestro servicio de atención al cliente.</p>
+                    <p>Los cambios son posibles en el plazo de 30 días después de la compra, siempre y cuando el producto esté en condiciones originales. Para más detalles, contáctanos.</p>
                 </div>
 
                 <div class="pregunta">
@@ -198,10 +244,8 @@
                     <h3>10. ¿Cómo puedo registrarme en CyberStore?</h3>
                     <p>Puedes registrarte haciendo clic en el icono de usuario en la parte superior derecha de la página y llenando el formulario con tus datos personales.</p>
                 </div>
-
             </div>
         </section>
-
 
         <!-- Formulario emergente -->
         <div id="formularioRegistro" class="modal">

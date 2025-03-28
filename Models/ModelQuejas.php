@@ -23,7 +23,6 @@
         }
 
         public function obtenerQuejas() {
-            // Consulta con parámetros (en este caso no tiene parámetros, pero la estructura es similar)
             $query = "SELECT id, nombre, correo, tipo, mensaje, fecha FROM quejas ORDER BY fecha DESC";
         
             // Preparar la consulta

@@ -327,13 +327,14 @@ body.dark-mode .desplegable-contenido a:hover {
 
 .carrusel-texto {
     position: absolute;
+    top: 5%; /* Ajusta para mover más arriba o abajo el título */
+    left: 50%;
+    transform: translateX(-50%);
     color: white;
     font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     z-index: 2;
     text-align: center;
-    margin-top: 200px;
-    margin-left: 30%;
 }
 
 .carrusel-btn:hover {
@@ -346,12 +347,14 @@ body.dark-mode .desplegable-contenido a:hover {
 .carrusel-contenedor {
     position: relative; /* Permite posicionar elementos absolutos dentro */
 }
+
+/* Recuadro amarillo (contador de oferta) */
 #promo-countdown {
     position: absolute;
-    top: 10%;
+    top: 70%; /* Ajusta para que quede más abajo que el título */
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(244, 175, 0, 0.7);
+    background-color: rgba(244, 175, 0, 0.8);
     color: #fff;
     padding: 0.8rem 1.2rem;
     border-radius: 5px;
@@ -892,7 +895,6 @@ body.active-menu {
     }
 }
 
-/* 2) Animación extra para las categorías (fade-up suave) */
 @keyframes fadeUp {
     from {
         opacity: 0;
