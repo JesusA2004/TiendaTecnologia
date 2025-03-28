@@ -1,23 +1,115 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ================== CARRUSEL ==================
+    // ========== MENÚ PRINCIPAL Y SUBMENÚS ==========
+    const menuToggle = document.querySelector('.menu-toggle');
+    const body = document.body;
+    let submenuTimer;
+
+    // Toggle menú principal
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        body.classList.toggle('menu-active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // Comportamiento submenús
+    document.querySelectorAll('.menu-desplegable').forEach(submenu => {
+        const trigger = submenu.querySelector('.menu-item');
+        
+        // Desktop - Hover
+        submenu.addEventListener('mouseenter', () => {
+            if (window.innerWidth > 992) {
+                clearTimeout(submenuTimer);
+                submenu.classList.add('active');
+            }
+        });
+        
+        submenu.addEventListener('mouseleave', () => {
+            if (window.innerWidth > 992) {
+                submenuTimer = setTimeout(() => {
+                    submenu.classList.remove('active');
+                }, 300);
+            }
+        });
+
+        // Mobile - Click
+        trigger.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992) {
+                e.preventDefault();
+                e.stopPropagation();
+                const wasActive = submenu.classList.contains('active');
+                
+                document.querySelectorAll('.menu-desplegable').forEach(other => {
+                    other.classList.remove('active');
+                });
+                
+                if (!wasActive) {
+                    submenu.classList.add('active');
+                }
+            }
+        });
+    });
+
+    // Cerrar menús al hacer click fuera
+    document.addEventListener('click', (e) => {
+        // Cerrar menú principal
+        if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
+            body.classList.remove('menu-active');
+            menuToggle.classList.remove('active');
+        }
+        
+        // Cerrar submenús en mobile
+        if (window.innerWidth <= 992 && !e.target.closest('.menu-desplegable')) {
+            document.querySelectorAll('.menu-desplegable').forEach(sub => {
+                sub.classList.remove('active');
+            });
+        }
+    });
+
+    // ========== NAVEGACIÓN Y SCROLL SUAVE ==========
+    document.querySelectorAll('.menu-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+            // Manejar enlaces internos
+            if (this.hash) {
+                e.preventDefault();
+                const target = document.querySelector(this.hash);
+                
+                // Scroll suave
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+
+                // Cerrar menú en móvil
+                if (window.innerWidth <= 992) {
+                    body.classList.remove('menu-active');
+                    menuToggle.classList.remove('active');
+                    document.querySelectorAll('.menu-desplegable').forEach(sub => {
+                        sub.classList.remove('active');
+                    });
+                }
+            }
+        });
+    });
+
+    // ========== CARRUSEL ==========
     const slides = document.querySelectorAll('.carrusel-img');
     let currentSlide = 0;
     const totalSlides = slides.length;
     let autoPlayInterval;
 
-    function showSlide(n) {
+    const showSlide = (n) => {
         slides.forEach(slide => slide.classList.remove('activa'));
         currentSlide = (n + totalSlides) % totalSlides;
         slides[currentSlide].classList.add('activa');
-    }
+    };
 
-    function startAutoPlay() {
+    const startAutoPlay = () => {
         autoPlayInterval = setInterval(() => showSlide(currentSlide + 1), 5000);
-    }
+    };
 
-    function stopAutoPlay() {
-        clearInterval(autoPlayInterval);
-    }
+    const stopAutoPlay = () => clearInterval(autoPlayInterval);
 
     document.querySelector('.prev').addEventListener('click', () => {
         stopAutoPlay();
@@ -31,112 +123,52 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startAutoPlay();
 
-    // ================== MENÚ HAMBURGUESA ==================
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuPrincipal = document.querySelector('.menu-principal');
-    const bars = document.querySelectorAll('.menu-toggle span');
-
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        menuPrincipal.classList.toggle('active');
-
-        // Animación de icono
-        bars[0].style.transform = menuToggle.classList.contains('active') 
-            ? 'rotate(45deg) translate(5px, 5px)' 
-            : 'none';
-            
-        bars[1].style.opacity = menuToggle.classList.contains('active') 
-            ? '0' 
-            : '1';
-            
-        bars[2].style.transform = menuToggle.classList.contains('active') 
-            ? 'rotate(-45deg) translate(7px, -6px)' 
-            : 'none';
-    });
-
-    // Cerrar menú al hacer click fuera
-    document.addEventListener('click', (e) => {
-        if (!menuPrincipal.contains(e.target) && 
-            !menuToggle.contains(e.target) &&
-            menuPrincipal.classList.contains('active')) {
-            
-            menuToggle.classList.remove('active');
-            menuPrincipal.classList.remove('active');
-            bars.forEach(bar => bar.style = '');
-        }
-    });
-
-    // Cerrar menú al seleccionar opción (mobile)
-    document.querySelectorAll('.menu-item').forEach(item => {
-        item.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                menuToggle.classList.remove('active');
-                menuPrincipal.classList.remove('active');
-                bars.forEach(bar => bar.style = '');
-            }
-        });
-    });
-
-    // ================== MODO OSCURO ==================
+    // ========== MODO OSCURO ==========
     const toggleModoOscuro = document.getElementById("modo-oscuro-toggle");
-    const body = document.body;
-
     if (localStorage.getItem("modoOscuro") === "activado") {
         body.classList.add("modo-oscuro");
     }
 
-    toggleModoOscuro.addEventListener("click", function (e) {
+    toggleModoOscuro.addEventListener("click", (e) => {
         e.preventDefault();
         body.classList.toggle("modo-oscuro");
-
         localStorage.setItem("modoOscuro", body.classList.contains("modo-oscuro") ? "activado" : "desactivado");
     });
 
-    // ================== FORMULARIO ==================
-    document.getElementById("icono-usuario").addEventListener("click", function () {
-        document.getElementById("formularioRegistro").style.display = "flex";
+    // ========== FORMULARIO ==========
+    const formulario = document.getElementById("formularioRegistro");
+    document.getElementById("icono-usuario").addEventListener("click", () => {
+        formulario.style.display = "flex";
     });
 
-    function cerrarFormulario() {
-        document.getElementById("formularioRegistro").style.display = "none";
-    }
-    
-    // Evento para la X de cerrar el formulario emergente
-    const cerrarBtn = document.querySelector('.modal .cerrar');
-    if (cerrarBtn) {
-        cerrarBtn.addEventListener('click', cerrarFormulario);
-    }
+    const cerrarFormulario = () => formulario.style.display = "none";
+    document.querySelector('.modal .cerrar')?.addEventListener('click', cerrarFormulario);
 
-    // ================== FAQ ==================
+    // ========== FAQ ==========
     document.querySelectorAll('.pregunta h3').forEach(item => {
         item.addEventListener('click', () => {
-            const parent = item.parentElement;
-            parent.classList.toggle('active');
+            item.parentElement.classList.toggle('active');
         });
     });
 
-    /*CONTEO REGRESIVO*/
-    // Fecha objetivo para la promoción (ejemplo: 31 de diciembre de 2025)
-    var countDownDate = new Date("Dec 31, 2025 23:59:59").getTime();
-
-    // Actualiza el contador cada segundo
-    var countdownfunction = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-
-        // Cálculos para días, horas, minutos y segundos
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Actualiza el elemento con id "countdown"
-        document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-
-        // Cuando la cuenta regresiva termine, muestra un mensaje
+    // ========== CONTEO REGRESIVO ==========
+    const countDownDate = new Date("Dec 31, 2025 23:59:59").getTime();
+    const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+        
         if (distance < 0) {
-            clearInterval(countdownfunction);
-            document.getElementById("countdown").innerHTML = "¡Oferta Expirada!";
+            clearInterval(countdown);
+            document.getElementById("countdown").textContent = "¡Oferta Expirada!";
+            return;
         }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").textContent = 
+            `${days}d ${hours}h ${minutes}m ${seconds}s`;
     }, 1000);
 });
