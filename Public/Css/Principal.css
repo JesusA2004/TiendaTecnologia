@@ -214,75 +214,6 @@ body.dark-mode .desplegable-contenido a:hover {
     background: #3d3d3d;
 }
 
-/* ========================= */
-/* Breakpoint intermedio     */
-/* ========================= */
-/* A partir de 992px hacia abajo (pero por encima de 769px),
-   el menú se encoge un poco y se va más a la izquierda */
-@media (max-width: 992px) and (min-width: 769px) {
-    .menu-principal {
-        justify-content: flex-start; /* o flex-end, como prefieras */
-        gap: 1rem;
-    }
-    .menu-item {
-        font-size: 0.95rem;
-    }
-    #buscar {
-        max-width: 180px;
-    }
-}
-
-/* ========================= */
-/* Menú en columna a 768px   */
-/* ========================= */
-@media (max-width: 768px) {
-    /* Ajustes para header en pantallas pequeñas */
-    header {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    header nav input {
-        width: 100%;
-        max-width: 400px;
-    }
-
-    /* Menú pasa a columna en pantallas pequeñas */
-    .menu-principal {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        position: relative;
-        width: 100%;
-        background: var(--color-fondo);
-        padding: 1rem;
-    }
-
-    .menu-item {
-        font-size: 0.9rem;
-        margin: 0.5rem 0;
-    }
-
-    .busqueda-usuario {
-        gap: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    #buscar {
-        max-width: 150px;
-    }
-
-    /* Carrusel más pequeño */
-    .carrusel-contenedor {
-        height: 400px;
-    }
-
-    .categorias {
-        grid-template-columns: 1fr;
-        padding: 1rem;
-    }
-}
-
 /* Carrusel mejorado */
 .carrusel {
     position: relative;
@@ -574,23 +505,6 @@ body.dark-mode .desplegable-contenido a:hover {
     transform: translateY(0);
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-    .carrusel-contenedor {
-        height: 500px;
-    }
-}
-
-/* Pequeños ajustes para 480px */
-@media (max-width: 480px) {
-    .card-sobre-nosotros {
-        padding: 2rem 1rem;
-    }
-    
-    .miembro {
-        padding: 1rem;
-    }
-}
 
 /* Animaciones */
 @keyframes slideIn {
@@ -743,21 +657,6 @@ button:focus, input:focus, a:focus {
     border-bottom: none;
 }
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
-    .card-faq {
-        padding: 15px;
-    }
-
-    .card-faq h2 {
-        font-size: 1.6em;
-    }
-
-    .pregunta h3 {
-        font-size: 1.1em;
-    }
-}
-
 /* Efecto para mostrar y ocultar las respuestas */
 .pregunta p {
     display: none;
@@ -838,29 +737,6 @@ button:focus, input:focus, a:focus {
     margin-bottom: 5px;
 }
 
-/* Menú en dispositivos móviles */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-    .menu-principal {
-        display: none; /* Ocultar menú por defecto en móviles */
-        flex-direction: column;
-        width: 100%;
-        background: var(--color-fondo);
-        position: absolute;
-        top: 100%;
-        left: 0;
-        box-shadow: var(--sombra);
-        padding: 1rem 0;
-        z-index: 9999;
-    }
-    .menu-principal.active {
-        display: flex;
-        animation: slideDown 0.5s ease;
-    }
-}
-
 /* Animación de deslizamiento del menú */
 @keyframes slideDown {
     from {
@@ -880,19 +756,6 @@ header:hover {
 /* Estilos adicionales para mejorar la experiencia del menú */
 body.active-menu {
     overflow: hidden; /* Previene el desplazamiento de la página cuando el menú está abierto */
-}
-
-/* ===================================================== */
-/* Actualizaciones de responsive para 'productos' y animaciones */
-/* ===================================================== */
-@media (max-width: 768px) {
-    .categoria-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    .categoria {
-        max-width: 90%;
-    }
 }
 
 @keyframes fadeUp {
@@ -915,124 +778,6 @@ body.active-menu {
     color: var(--color-secundario);
     transform: scale(1.05);
     transition: 0.4s ease;
-}
-
-/* ===================================================== */
-/* MEJORAS ESPECÍFICAS PARA MENÚ MÓVIL (768px hacia abajo) */
-/* ===================================================== */
-@media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        padding: 1rem;
-        position: relative;
-    }
-
-    /* Logo centrado */
-    header h1 {
-        width: 100%;
-        text-align: center;
-        order: 1;
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-    }
-
-    /* Botón hamburguesa estilo moderno */
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        position: absolute;
-        left: 1rem;
-        top: 1.2rem;
-        padding: 0.8rem;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        transition: var(--transicion-rapida);
-    }
-
-    .menu-toggle:hover {
-        background: var(--color-primario);
-    }
-
-    .menu-toggle span {
-        background: var(--color-texto);
-        transition: var(--transicion-rapida);
-    }
-
-    /* Menú principal estilo lista moderna */
-    .menu-principal {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--color-fondo);
-        box-shadow: var(--sombra);
-        padding: 1rem 0;
-        z-index: 1000;
-        border-radius: 0 0 15px 15px;
-    }
-
-    .menu-principal.active {
-        display: flex;
-        animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Items del menú con diseño moderno */
-    .menu-item {
-        width: 90%;
-        margin: 0.5rem auto;
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-        font-size: 1rem;
-        color: var(--color-texto);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        transition: var(--transicion-rapida);
-    }
-
-    .menu-item::after {
-        display: none; /* Ocultar subrayado en móvil */
-    }
-
-    .menu-item:hover {
-        background: var(--color-primario);
-        transform: translateX(10px);
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Menú desplegable en móvil */
-    .menu-desplegable {
-        width: 100%;
-    }
-
-    .desplegable-contenido {
-        position: relative;
-        width: 90%;
-        margin: 0.5rem auto;
-        box-shadow: none;
-        background: rgba(0, 0, 0, 0.05);
-    }
-
-    /* Busqueda adaptativa */
-    #buscar {
-        order: 2;
-        width: 100%;
-        max-width: none;
-        margin: 1rem 0;
-        background: rgba(255, 255, 255, 0.15);
-    }
-
-    /* Icono usuario posicionado correctamente */
-    #icono-usuario {
-        position: absolute;
-        right: 1rem;
-        top: 0.8rem;
-        width: 35px;
-        height: 35px;
-    }
 }
 
 /* ===================================================== */
@@ -1074,30 +819,6 @@ body.active-menu {
     to {
         transform: scale(2);
         opacity: 0;
-    }
-}
-
-/* ===================================================== */
-/* AJUSTES PARA PANTALLAS MUY PEQUEÑAS (480px) */
-/* ===================================================== */
-@media (max-width: 480px) {
-    .menu-item {
-        font-size: 0.9rem;
-        padding: 0.8rem;
-    }
-
-    .menu-toggle {
-        padding: 0.6rem;
-    }
-
-    .menu-toggle span {
-        width: 22px;
-        height: 2px;
-    }
-
-    #icono-usuario {
-        width: 30px;
-        height: 30px;
     }
 }
 
@@ -1280,86 +1001,6 @@ header {
     box-shadow: 0 0 10px rgba(37, 36, 34, 0.5);
 }
 
-/* ========== MODIFICACIONES RESPONSIVE (NO SE ELIMINÓ NADA) ========== */
-@media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        padding: 1rem;
-        gap: 1rem;
-    }
-
-    header h1 {
-        order: 1;
-        width: 100%;
-        text-align: center;
-        font-size: 1.8rem;
-        margin: 0;
-    }
-
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        position: absolute;
-        left: 1rem;
-        top: 1.3rem;
-        z-index: 1100;
-        background: rgba(255, 255, 255, 0.1);
-        padding: 0.8rem;
-        border-radius: 8px;
-        border: none;
-    }
-
-    .menu-toggle span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background: var(--color-texto);
-        transition: var(--transicion-rapida);
-    }
-
-    .menu-principal {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--color-fondo);
-        padding: 1rem;
-        box-shadow: var(--sombra);
-        flex-direction: column;
-        z-index: 999;
-    }
-
-    .menu-principal.active {
-        display: flex;
-        animation: slideDown 0.3s ease;
-    }
-
-    .menu-item {
-        width: 100%;
-        padding: 1rem;
-        margin: 0.25rem 0;
-        background: rgba(0, 0, 0, 0.05);
-        border-radius: 8px;
-        text-align: center;
-    }
-
-    #icono-usuario {
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-        width: 35px;
-        height: 35px;
-    }
-
-    #buscar {
-        order: 2;
-        width: 100%;
-        margin: 0.5rem 0;
-    }
-}
-
 @keyframes slideDown {
     from { transform: translateY(-20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
@@ -1424,38 +1065,6 @@ body.dark-mode .desplegable-contenido a:hover {
     background: var(--color-texto);
     margin: 5px 0;
     transition: var(--transicion-rapida);
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu-principal {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: var(--color-fondo);
-        flex-direction: column;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        padding: 20px 0;
-        overflow-y: auto;
-        z-index: 1000;
-    }
-
-    .menu-principal.active {
-        left: 0;
-    }
-
-    .menu-item {
-        width: 90%;
-        margin: 10px auto;
-        padding: 15px;
-        background: rgba(0, 0, 0, 0.05);
-        border-radius: 8px;
-    }
 }
 
 /* ========== CARRUSEL ========== */

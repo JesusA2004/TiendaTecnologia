@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CyberStore</title>
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Principal.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>

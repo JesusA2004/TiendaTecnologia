@@ -1,4 +1,5 @@
-use ktkswgfb_bdTienda;
+create database tienda;
+use tienda;
 
 create table cliente(
     id int primary key auto_increment,
