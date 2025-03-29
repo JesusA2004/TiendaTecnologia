@@ -54,9 +54,9 @@
                     <span class="menu-item">More options ▼</span>
                     <div class="desplegable-contenido">
                         <a href="#" id="modo-oscuro-toggle">Dark mode</a>
-                        <a href="indexEnglish.php" id="cambiar-idioma">Change to English</a>
+                        <a href="indexEnglish.php" id="cambiar-idioma">Change to Spanish</a>
                         <a href="https://lesgolfclub.netlify.app" id="mario-link">Mario's Team</a>
-                        <a href="Views/quejas.php" id="quejas">Complaints</a>
+                        <a href="Views/quejasE.php" id="quejas">Complaints</a>
                     </div>
                 </div>
 

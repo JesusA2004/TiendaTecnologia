@@ -1,3 +1,11 @@
+/* ===== Reset / Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Estilos generales ===== */
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
@@ -5,6 +13,7 @@ body {
     padding: 0;
 }
 
+/* ===== Contenedor principal ===== */
 .container {
     width: 50%;
     margin: 50px auto;
@@ -13,17 +22,16 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-top: 5px solid #ffc107;
-}
-
-.container {
-    margin-top: 110px; /* Puedes ajustar el valor según tu preferencia */
+    margin-top: 110px;
 }
 
 h2 {
     color: #333;
     text-align: center;
+    margin-bottom: 20px;
 }
 
+/* ===== Formulario ===== */
 form {
     display: flex;
     flex-direction: column;
@@ -35,13 +43,14 @@ label {
     color: #333;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 100%;
-    box-sizing: border-box;
 }
 
 textarea {
@@ -63,54 +72,66 @@ button:hover {
     background-color: #e0a800;
 }
 
-/* Contenedor para centrar la tabla */
+/* ===== Contenedor para la tabla ===== */
 .table-container {
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    overflow-x: auto;
     margin-top: 20px;
 }
 
-/* Estilos para la tabla de quejas */
+/* ===== Tabla de quejas ===== */
 #tablaQuejas {
-    width: 90%;
-    max-width: 1000px;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 8px;
     overflow: hidden;
+    min-width: 600px;
 }
 
-/* Estilo para encabezados */
+/* Encabezados de la tabla */
 #tablaQuejas thead {
     background-color: #e0a800;
     color: white;
     text-align: left;
 }
 
-/* Estilo para filas y celdas */
-#tablaQuejas th, #tablaQuejas td {
+/* Filas y celdas */
+#tablaQuejas th,
+#tablaQuejas td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
     text-align: left;
+    white-space: nowrap;
 }
 
-/* Estilo para filas alternas */
+/* Filas alternas */
 #tablaQuejas tbody tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-/* Hover para filas */
+/* Hover en filas */
 #tablaQuejas tbody tr:hover {
     background-color: #e0f7fa;
     cursor: pointer;
 }
 
-/* Diseño responsivo para pantallas pequeñas */
+/* ===== Responsivo ===== */
 @media screen and (max-width: 768px) {
-    #tablaQuejas, #tablaQuejas thead, #tablaQuejas tbody, #tablaQuejas th, #tablaQuejas td, #tablaQuejas tr {
+    .container {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    #tablaQuejas {
         display: block;
         width: 100%;
+        min-width: 100%;
     }
 
     #tablaQuejas thead {
@@ -118,19 +139,23 @@ button:hover {
     }
 
     #tablaQuejas tr {
+        display: block;
         margin-bottom: 15px;
         border: 1px solid #ddd;
         border-radius: 5px;
         background-color: #fff;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        padding: 10px;
     }
 
     #tablaQuejas td {
+        display: block;
         text-align: left;
         padding: 10px;
         border: none;
         position: relative;
         padding-left: 50%;
+        white-space: normal;
     }
 
     #tablaQuejas td::before {
@@ -141,5 +166,6 @@ button:hover {
         padding-right: 10px;
         font-weight: bold;
         color: #e0a800;
+        white-space: nowrap;
     }
 }

@@ -13,10 +13,13 @@
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="<?php echo CSS_URL; ?>/quejas.css">
-    <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Principal.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Quejas y Sugerencias</title>
+
+    <link rel="stylesheet" type="text/css" href="<?php echo CSS_URL; ?>/quejas.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Principal.css">
+    <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Responsive.css">
+    
 </head>
 <body>
 <header>
@@ -32,28 +35,27 @@
         <nav>
             <div class="menu-principal">
 
-                <a href="#inicio" class="menu-item">Inicio</a>
-                <a href="#nosotros" class="menu-item">Sobre nosotros</a>
-                <a href="#productos" class="menu-item">Productos</a>
+                <a href="../index.php#inicio" class="menu-item">Inicio</a>
+                <a href="../index.php#nosotros" class="menu-item">Sobre nosotros</a>
+                <a href="../index.php#productos" class="menu-item">Productos</a>
                 
-                <a href="#faq" class="menu-item">
+                <a href="../index.php#faq" class="menu-item">
                     Preguntas frecuentes  <img src="<?php echo BASE_URL; ?>/Public/Resources/preguntaIcon.png" alt="iconFaq" class="faq-icono">
                 </a>
 
-                <a href="#contacto" class="menu-item">Contacto</a>
+                <a href="../index.php#contacto" class="menu-item">Contacto</a>
                 
                 <!-- Menú desplegable simplificado -->
                 <div class="menu-desplegable">
                     <span class="menu-item">Más opciones ▼</span>
                     <div class="desplegable-contenido">
                         <a href="#" id="modo-oscuro-toggle">Modo oscuro</a>
-                        <a href="indexEnglish.php" id="cambiar-idioma">Cambiar a Ingles</a>
+                        <a href="quejasE.php" id="cambiar-idioma">Cambiar a Ingles</a>
                         <a href="https://lesgolfclub.netlify.app" id="mario-link">Equipo de Mario</a>
-                        <a href="Views/quejas.php" id="quejas">Quejas</a>
+                        <a href="#" id="quejas">Quejas</a>
                     </div>
                 </div>
 
-                <img id="icono-usuario" src="<?php echo BASE_URL; ?>/Public/Resources/registrar.png" alt="Usuario">
             </div>
         </nav>
     </header>
@@ -131,6 +133,9 @@
             }
         }
     </script>
+
+    <script src="<?php echo JS_URL; ?>/Quejas.js"></script>
+    <script src="https://cdn.userway.org/widget.js" data-account="kjnkkEfZx0"></script>
 
 </body>
 </html>
