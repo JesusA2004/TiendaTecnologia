@@ -151,36 +151,62 @@
             <div class="texto">
                 <h2 class="traducible">Explore the Latest in Technology!</h2>
                 <p align="justify">
-                    Are you ready to upgrade your life? Discover products that combine style, performance, and functionality to make your everyday extraordinary. Look no further, your next great purchase is here!
+                    Are you ready to upgrade your life? Discover products that combine style, performance, and functionality to make your everyday life extraordinary. Look no further—your next great purchase is here!
                 </p>
             </div>
             <div class="categoria-container">
                 <div class="categoria">
-                    <img src="<?php echo BASE_URL; ?>/Public/Resources/laptops.jpg" alt="Laptops">
+                    <div class="card-imagen">
+                        <img src="<?php echo BASE_URL; ?>/Public/Resources/laptops.jpg" alt="Laptops">
+                        <!-- Measurement block that will be displayed on hover -->
+                        <div class="producto-medidas">
+                            <p><strong>Dimensions:</strong> 35cm x 24cm x 2cm</p>
+                            <p><strong>Weight:</strong> 1.8 kg</p>
+                        </div>
+                    </div>
                     <h3 class="traducible">Laptops</h3>
                     <p class="precio"><strong>From $10,999.00 MXN</strong></p>
                     <p class="traducible">
-                        Experience power and portability at your fingertips. Our laptops are designed to accompany you every step of the way, from work to entertainment.
+                        Experience power and portability in the palm of your hand. Our laptops are designed 
+                        to accompany you every step of the way, from work to entertainment.
                     </p>
                 </div>
+
                 <div class="categoria">
-                    <img src="<?php echo BASE_URL; ?>/Public/Resources/refrigeradores.jpg" alt="Refrigerators">
+                    <div class="card-imagen">
+                        <img src="<?php echo BASE_URL; ?>/Public/Resources/refrigeradores.jpg" alt="Refrigerators">
+                        <!-- Measurement block that will be displayed on hover -->
+                        <div class="producto-medidas">
+                            <p><strong>Dimensions:</strong> 70cm x 60cm x 170cm</p>
+                            <p><strong>Weight:</strong> 80 kg</p>
+                        </div>
+                    </div>    
                     <h3 class="traducible">Refrigerators</h3>
                     <p class="precio"><strong>From $8,999.00 MXN</strong></p>
                     <p class="traducible">
-                        Keep your food fresh and organized with our state-of-the-art refrigerators. Advanced technology that ensures energy efficiency and an elegant design.
+                        Keep your food fresh and organized with our next-generation refrigerators. 
+                        Advanced technology ensures energy efficiency and an elegant design.
                     </p>
                 </div>
                 <div class="categoria">
-                    <img src="<?php echo BASE_URL; ?>/Public/Resources/tablets.png" alt="Tablets">
+                    <div class="card-imagen">
+                        <img src="<?php echo BASE_URL; ?>/Public/Resources/tablets.png" alt="Tablets">
+                        <!-- Measurement block that will be displayed on hover -->
+                        <div class="producto-medidas">
+                            <p><strong>Dimensions:</strong> 24cm x 17cm x 0.8cm</p>
+                            <p><strong>Weight:</strong> 500 g</p>
+                        </div>
+                    </div>
                     <h3 class="traducible">Tablets</h3>
                     <p class="precio"><strong>From $5,999.00 MXN</strong></p>
                     <p class="traducible">
-                        Discover the versatility that only a tablet can offer. Lightweight, fast, and with a superior quality screen, perfect for all your daily tasks.
+                        Discover the versatility that only a tablet can offer. Lightweight, fast, and with a high-quality screen, 
+                        perfect for all your daily tasks.
                     </p>
                 </div>
             </div>     
         </section>
+
 
         <section id="faq" class="preguntas-frecuentes">
             <div class="card-faq">

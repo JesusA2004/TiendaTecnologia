@@ -164,7 +164,14 @@
             </div>
             <div class="categoria-container">
                 <div class="categoria">
-                    <img src="<?php echo BASE_URL; ?>/Public/Resources/laptops.jpg" alt="Laptops">
+                    <div class="card-imagen">
+                        <img src="<?php echo BASE_URL; ?>/Public/Resources/laptops.jpg" alt="Laptops">
+                        <!-- Bloque de medidas que se mostrará al hacer hover -->
+                        <div class="producto-medidas">
+                            <p><strong>Dimensiones:</strong> 35cm x 24cm x 2cm</p>
+                            <p><strong>Peso:</strong> 1.8 kg</p>
+                        </div>
+                    </div>
                     <h3 class="traducible">Laptops</h3>
                     <p class="precio"><strong>Desde $10,999.00 MXN</strong></p>
                     <p class="traducible">
@@ -172,8 +179,16 @@
                         para acompañarte en cada paso, desde el trabajo hasta el entretenimiento.
                     </p>
                 </div>
+
                 <div class="categoria">
-                    <img src="<?php echo BASE_URL; ?>/Public/Resources/refrigeradores.jpg" alt="Refrigeradores">
+                    <div class="card-imagen">
+                        <img src="<?php echo BASE_URL; ?>/Public/Resources/refrigeradores.jpg" alt="Refrigeradores">
+                        <!-- Bloque de medidas que se mostrará al hacer hover -->
+                        <div class="producto-medidas">
+                            <p><strong>Dimensiones:</strong> 70cm x 60cm x 170cm</p>
+                            <p><strong>Peso:</strong> 80 kg</p>
+                        </div>
+                    </div>    
                     <h3 class="traducible">Refrigeradores</h3>
                     <p class="precio"><strong>Desde $8,999.00 MXN</strong></p>
                     <p class="traducible">
@@ -182,7 +197,14 @@
                     </p>
                 </div>
                 <div class="categoria">
-                    <img src="<?php echo BASE_URL; ?>/Public/Resources/tablets.png" alt="Tablets">
+                    <div class="card-imagen">
+                        <img src="<?php echo BASE_URL; ?>/Public/Resources/tablets.png" alt="Tablets">
+                        <!-- Bloque de medidas que se mostrará al hacer hover -->
+                        <div class="producto-medidas">
+                            <p><strong>Dimensiones:</strong> 24cm x 17cm x 0.8cm</p>
+                            <p><strong>Peso:</strong> 500 g</p>
+                        </div>
+                    </div>
                     <h3 class="traducible">Tablets</h3>
                     <p class="precio"><strong>Desde $5,999.00 MXN</strong></p>
                     <p class="traducible">
