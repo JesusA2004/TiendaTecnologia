@@ -2,7 +2,7 @@
 :root {
     --color-primario: #0220ff;
     --color-secundario: #028bfb;
-    --color-acento: #d96d00;
+    --color-acento: #ffed25;
     --color-fondo: #f8f9fa;
     --color-texto: #000000;
     --color-borde: #dee2e6;
@@ -237,7 +237,7 @@ body.dark-mode .desplegable-contenido a:hover {
 
 .carrusel-texto {
     position: absolute;
-    top: 5%; /* Ajusta para mover más arriba o abajo el título */
+    top: 25%; /* Ajusta para mover más arriba o abajo el título */
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -261,7 +261,7 @@ body.dark-mode .desplegable-contenido a:hover {
 /* Recuadro amarillo (contador de oferta) */
 #promo-countdown {
     position: absolute;
-    top: 70%; /* Ajusta para que quede más abajo que el título */
+    top: 50%; /* Ajusta para que quede más abajo que el título */
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(244, 175, 0, 0.8);
@@ -370,7 +370,7 @@ body.dark-mode .desplegable-contenido a:hover {
 
 .categoria .precio {
     font-size: 1rem;
-    color: var(--color-titulos);
+    color: #fdb211;
     margin-top: 0.5rem;
     text-align: center;
 }
@@ -1110,6 +1110,6 @@ body.dark-mode .desplegable-contenido a:hover {
 
 #btn-subir img {
     width: 50px;
-    height: auto;
+    height: 35px;
 }
 

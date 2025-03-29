@@ -53,8 +53,7 @@
                 <div class="menu-desplegable">
                     <span class="menu-item">Más opciones ▼</span>
                     <div class="desplegable-contenido">
-                        <a href="#" id="modo-oscuro-toggle">Modo oscuro</a>
-                        <a href="indexEnglish.php" id="cambiar-idioma">Cambiar a Ingles</a>
+                        <a href="indexEnglish.php" id="cambiar-idioma">Cambiar a Inglés</a>
                         <a href="https://lesgolfclub.netlify.app" id="mario-link">Equipo de Mario</a>
                         <a href="Views/quejas.php" id="quejas">Quejas</a>
                     </div>
@@ -88,9 +87,10 @@
                 
                 <!-- Recuadro amarillo abajo del título -->
                 <div id="promo-countdown">
-                    🚀 ¡Oferta por tiempo limitado! 🛍️ 💥 
-                    Ahorra en grande, pero date prisa: 
-                    <span id="countdown"></span> ⏳ ¡Compra ya!
+                    <b>🚀 ¡Oferta por tiempo limitado! 🛍️💥</b>
+                    <p>Ahorra en grande, pero date prisa:</p> 
+                    <span id="countdown"></span> ⏳ 
+                    <p>¡Compra ya!</p>
                 </div>
 
                 <!-- Otras imágenes del carrusel -->

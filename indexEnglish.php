@@ -43,7 +43,7 @@
                 <a href="#productos" class="menu-item">Products</a>
                 
                 <a href="#faq" class="menu-item">
-                    Frequently Asked Questions  
+                    FAQ  
                     <img src="<?php echo BASE_URL; ?>/Public/Resources/preguntaIcon.png" alt="FAQ Icon" class="faq-icono">
                 </a>
 
@@ -53,8 +53,7 @@
                 <div class="menu-desplegable">
                     <span class="menu-item">More options ▼</span>
                     <div class="desplegable-contenido">
-                        <a href="#" id="modo-oscuro-toggle">Dark mode</a>
-                        <a href="indexEnglish.php" id="cambiar-idioma">Change to Spanish</a>
+                        <a href="index.php" id="cambiar-idioma">Change to Spanish</a>
                         <a href="https://lesgolfclub.netlify.app" id="mario-link">Mario's Team</a>
                         <a href="Views/quejasE.php" id="quejas">Complaints</a>
                     </div>
@@ -88,9 +87,10 @@
                 
                 <!-- Yellow box under the title -->
                 <div id="promo-countdown">
-                    🚀 Limited time offer! 🛍️ 💥 
-                    Save big, but hurry up: 
-                    <span id="countdown"></span> ⏳ Buy now!
+                    <b>🚀 Limited time offer! 🛍️💥 </b>
+                    <p>Save big, but hurry up:</p>
+                    <span id="countdown"></span> ⏳ 
+                    <p>Buy now!</p>
                 </div>
 
                 <!-- Other carousel images -->

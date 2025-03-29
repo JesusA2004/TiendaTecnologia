@@ -123,18 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startAutoPlay();
 
-    // ========== MODO OSCURO ==========
-    const toggleModoOscuro = document.getElementById("modo-oscuro-toggle");
-    if (localStorage.getItem("modoOscuro") === "activado") {
-        body.classList.add("modo-oscuro");
-    }
-
-    toggleModoOscuro.addEventListener("click", (e) => {
-        e.preventDefault();
-        body.classList.toggle("modo-oscuro");
-        localStorage.setItem("modoOscuro", body.classList.contains("modo-oscuro") ? "activado" : "desactivado");
-    });
-
     // ========== FORMULARIO ==========
     const formulario = document.getElementById("formularioRegistro");
     document.getElementById("icono-usuario").addEventListener("click", () => {
@@ -152,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ========== CONTEO REGRESIVO ==========
-    const countDownDate = new Date("Dec 31, 2025 23:59:59").getTime();
+    const countDownDate = new Date("Apr 2, 2025 23:59:59").getTime();
     const countdown = setInterval(() => {
         const now = new Date().getTime();
         const distance = countDownDate - now;
