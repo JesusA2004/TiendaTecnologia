@@ -19,11 +19,12 @@
     <link rel="stylesheet" type="text/css" href="<?php echo CSS_URL; ?>/quejas.css">
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Principal.css">
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     
 </head>
 <body>
 <header>
-        <img href="#inicio" src="<?php echo BASE_URL; ?>/Public/Resources/Logo.png" width="150" alt="Logo CyberStore" class="logo">
+        <img href="#inicio" src="<?php echo BASE_URL; ?>/Public/Resources/logo.png" width="150" alt="Logo CyberStore" class="logo">
 
         <!-- Botón hamburguesa -->
         <button class="menu-toggle">
@@ -117,9 +118,7 @@
                     <?php endif; ?>
                 </tbody>
             </table>
-        </div>
-
-
+        </div>              
     <!-- Script para mostrar/ocultar la tabla -->
     <script>
         function mostrarTablaQuejas() {
@@ -136,6 +135,5 @@
 
     <script src="<?php echo JS_URL; ?>/Quejas.js"></script>
     <script src="https://cdn.userway.org/widget.js" data-account="kjnkkEfZx0"></script>
-
 </body>
 </html>

@@ -18,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo CSS_URL; ?>/quejas.css">
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Principal.css">
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     
 </head>
 
