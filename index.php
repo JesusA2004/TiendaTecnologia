@@ -12,12 +12,17 @@
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
+
+    <a href="#" id="btn-subir">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/up--v1.png" alt="Subir">
+    </a>
+
 <body>
 
     <header>
         <!-- Logo a la izquierda -->
         <img 
-            src="<?php echo BASE_URL; ?>/Public/Resources/Logo.png" 
+            src="<?php echo BASE_URL; ?>/Public/Resources/logo.png" 
             width="150" 
             alt="Logo CyberStore" 
             class="logo"
@@ -153,10 +158,8 @@
         <section class="categorias" id="productos">
             <div class="texto">
                 <h2 class="traducible">¡Explora lo último en tecnología!</h2>
-                <p class="traducible">
-                    ¿Estás listo para darle un upgrade a tu vida? Descubre productos que combinan estilo, 
-                    rendimiento y funcionalidad para hacer de tu día a día algo extraordinario. ¡No busques más, 
-                    tu próxima gran compra está aquí!
+                <p align="justify">
+                    ¿Estás listo para darle un upgrade a tu vida? Descubre productos que combinan estilo,  rendimiento y funcionalidad para hacer de tu día a día algo extraordinario. ¡No busques más, tu próxima gran compra está aquí!
                 </p>
             </div>
             <div class="categoria-container">
@@ -270,6 +273,7 @@
 
     <?php require_once __DIR__ . '/Includes/Footer.php'; ?>
     <script src="<?php echo JS_URL; ?>/Principal.js"></script>
+    <script src="<?php echo JS_URL; ?>/Scroll.js"></script>
 
 </body>
 </html>

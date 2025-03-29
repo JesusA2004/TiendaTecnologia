@@ -1,12 +1,16 @@
-/* Responsive.css - Versión Corregida */
-/* ========== HEADER RESPONSIVE ========== */
+/* =========================== Responsive.css =========================== */
+
+/* ========== 1) Hasta 1200px ========== */
 @media screen and (max-width: 1200px) {
     header {
-        padding: 1rem;
+        padding: 1.5rem 1rem;
     }
     
     .logo {
-        width: 140px;
+        width: 100px;
+        height: auto;
+        object-fit: contain; /* La imagen se escala para encajar sin recortar */
+        object-position: center; /* Centra la imagen en el espacio sobrante */
     }
     
     nav {
@@ -22,7 +26,29 @@
     }
 }
 
+/* ========== 2) Hasta 992px ========== */
 @media screen and (max-width: 992px) {
+    header {
+        padding: 0.2rem;
+    }
+
+    /* Logo dentro del header, sin position: fixed */
+    .logo {
+        width: 110px;
+        position: relative;
+        margin-right: auto;
+        height: auto;
+        object-fit: contain; /* La imagen se escala para encajar sin recortar */
+        object-position: center; /* Centra la imagen en el espacio sobrante */
+    }
+
+    /* Mostrar el botón hamburguesa */
+    .menu-toggle {
+        display: block;
+        margin-left: auto; /* Se alinea a la derecha */
+    }
+
+    /* Nav se vuelve overlay en móvil */
     nav {
         display: none;
         position: fixed;
@@ -30,11 +56,15 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: white;
+        background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
         backdrop-filter: blur(10px);
         margin: 0;
         z-index: 999;
-        animation: menuFadeIn 0.3s ease;
+        animation: menuFadeIn 0.3s ease; /* Usa keyframes (definidos fuera de @media) */
+    }
+
+    body.menu-active nav {
+        display: block;
     }
     
     .menu-principal {
@@ -50,12 +80,13 @@
     }
     
     .menu-item {
-        color: rgb(0, 0, 0) !important;
+        color: rgb(255, 255, 255) !important;
         font-size: 1.2rem;
         padding: 1rem;
         width: 100%;
     }
     
+    /* Menú desplegable (clic) */
     .menu-desplegable {
         width: 100%;
         position: static;
@@ -68,7 +99,7 @@
         box-shadow: none;
         margin: 0.5rem 0;
         padding: 0;
-        animation: submenuSlide 0.3s ease;
+        animation: submenuSlide 0.3s ease; /* Usa keyframes (definidos fuera de @media) */
     }
     
     .menu-desplegable.active .desplegable-contenido {
@@ -80,62 +111,65 @@
         padding: 0.8rem;
         font-size: 1rem;
     }
-    
-    .menu-toggle {
-        display: block;
-        position: fixed;
-        right: 1rem;
-        top: 1.5rem;
-        z-index: 1001;
+}
+
+@media screen and (max-width: 768px) {
+    .categoria-container {
+        flex-direction: column;  /* Apila en columna */
+        align-items: center;     /* Centra las tarjetas */
     }
-    
-    .logo {
-        position: fixed;
-        left: 1rem;
-        top: 1rem;
-        width: 100px;
-        z-index: 1001;
-    }
-    
-    @keyframes menuFadeIn {
-        from { opacity: 0; backdrop-filter: blur(0); }
-        to { opacity: 1; backdrop-filter: blur(10px); }
-    }
-    
-    @keyframes submenuSlide {
-        from { transform: translateY(-10px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-    
-    body.menu-active nav {
-        display: block;
+
+    .categoria {
+        max-width: 400px;       /* Ancho máximo de cada tarjeta */
+        width: 100%;            /* Se ajusta al contenedor */
+        margin-bottom: 1.5rem;  /* Espacio entre tarjetas */
     }
 }
 
+/* ========== 3) Hasta 576px ========== */
 @media screen and (max-width: 576px) {
+    header {
+        padding: 1rem;
+        min-height: 55px;
+    }
+
     .logo {
         width: 80px;
-        top: 1.2rem;
+        height: auto;
+        object-fit: contain; /* La imagen se escala para encajar sin recortar */
+        object-position: center; /* Centra la imagen en el espacio sobrante */
     }
-    
+
     .menu-toggle {
-        top: 1.2rem;
+        width: 35px;
+        height: 35px;
+        top: 1.2rem; /* Ajusta la posición del ícono hamburguesa */
     }
-    
+
     .menu-item {
         font-size: 1.1rem;
         padding: 0.8rem;
     }
     
+    /* Contador promocional más pequeño */
     #promo-countdown {
         font-size: 0.8rem;
         padding: 0.5rem;
     }
 }
 
+/* ========== 4) Hasta 380px ========== */
 @media screen and (max-width: 380px) {
+    header {
+        padding: 0.8rem 1rem;
+        min-height: 50px;
+    }
+
     .logo {
         width: 70px;
+        height: auto;
+        object-fit: contain; /* La imagen se escala para encajar sin recortar */
+        object-position: center; /* Centra la imagen en el espacio sobrante */
     }
     
     .menu-item {
@@ -143,32 +177,12 @@
     }
 }
 
-/* Desktop - Comportamiento hover */
+/* ========== 5) Desktop Hover (>= 993px) ========== */
 @media screen and (min-width: 993px) {
+    /* Menú desplegable al pasar el mouse */
     .menu-desplegable:hover .desplegable-contenido {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
-}
-
-.menu-toggle span {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
-
-.logo {
-    transition: all 0.3s ease;
-    margin-top: 2%;
 }

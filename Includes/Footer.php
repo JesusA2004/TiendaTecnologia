@@ -1,5 +1,6 @@
 <footer>
     <link rel="stylesheet" href="<?php echo CSS_URL; ?>/Footer.css">
+
     <h2>CyberStore</h2>
     <div class="footer-container" id="contacto">
         
@@ -42,3 +43,5 @@
     </div>
     <p class="footer-copy">&copy; <?php echo date('Y'); ?> CyberStore - Todos los derechos reservados.</p>
 </footer>
+
+<script src="https://cdn.userway.org/widget.js" data-account="kjnkkEfZx0"></script>

@@ -47,3 +47,5 @@
     
     <p class="footer-copy">&copy; <?php echo date('Y'); ?> CyberStore - All rights reserved.</p>
 </footer>
+
+<script src="https://cdn.userway.org/widget.js" data-account="kjnkkEfZx0"></script>
