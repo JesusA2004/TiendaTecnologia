@@ -99,6 +99,7 @@
                         <th>Tipo</th>
                         <th>Mensaje</th>
                         <th>Fecha</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -111,6 +112,11 @@
                                 <td data-label="Tipo"><?php echo $queja['tipo']; ?></td>
                                 <td data-label="Mensaje"><?php echo $queja['mensaje']; ?></td>
                                 <td data-label="Fecha"><?php echo $queja['fecha']; ?></td>
+                                <td>
+                                    <button onclick="window.location.href='actualizarQueja.php?id=<?= $queja['id'] ?>'" class="btn-editar">Editar</button>
+                                    <button onclick="eliminarQueja(<?php echo $queja['id']; ?>)">Eliminar</button>
+                                </td>
+
                             </tr>
                         <?php endforeach; ?>
                     <?php else: ?>
@@ -130,8 +136,43 @@
             } else {
                 tabla.style.display = 'none'; // Ocultar tabla si está visible
             }
+        } 
+
+        function eliminarQueja(id) {
+            if (confirm("¿Estás seguro de que deseas eliminar esta queja?")) {
+                fetch('../Controllers/ControllerQuejas.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: 'eliminar=1&id=' + id
+                })
+                .then(response => response.text())
+                .then(data => {
+                    alert(data);  // Muestra la respuesta del servidor
+                    location.reload();  // Recarga la página para actualizar la tabla
+                })
+                .catch(error => console.error('Error:', error));
+            }
         }
     </script>
+
+
+    <!-- Modal para editar -->
+    <div id="editarModal" style="display: none;">
+        <form action="actualizarQueja.php" method="POST">
+            <input type="hidden" name="id" id="editId">
+            <label>Nombre:</label>
+            <input type="text" name="nombre" id="editNombre" required><br>
+            <label>Correo:</label>
+            <input type="email" name="correo" id="editCorreo" required><br>
+            <label>Tipo:</label>
+            <input type="text" name="tipo" id="editTipo" required><br>
+            <label>Mensaje:</label>
+            <textarea name="mensaje" id="editMensaje" required></textarea><br>
+            <button type="submit" name="editarQueja">Guardar cambios</button>
+        </form>
+    </div>
 
     <script src="<?php echo JS_URL; ?>/Quejas.js"></script>
     <script src="https://cdn.userway.org/widget.js" data-account="kjnkkEfZx0"></script>

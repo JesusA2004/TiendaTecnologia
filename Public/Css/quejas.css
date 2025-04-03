@@ -15,7 +15,7 @@ body {
 
 /* ===== Contenedor principal ===== */
 .container {
-    width: 50%;
+    width: 60%;
     margin: 50px auto;
     background-color: #fff;
     padding: 20px;
@@ -103,8 +103,9 @@ button:hover {
     padding: 12px;
     border-bottom: 1px solid #ddd;
     text-align: left;
-    white-space: nowrap;
+    white-space: nowrap; /* Si deseas que el contenido no se divida en varias líneas */
 }
+
 
 /* Filas alternas */
 #tablaQuejas tbody tr:nth-child(even) {

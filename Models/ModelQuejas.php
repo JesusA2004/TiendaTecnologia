@@ -51,6 +51,40 @@
                 // Si la consulta no se preparó correctamente, devolver un error
                 die("Error al preparar la consulta: " . $this->conexion->error);
             }
+        } 
+
+        public function getQuejaPorId($id) {
+            $sql = "SELECT * FROM quejas WHERE id = ?";
+            $stmt = $this->conexion->prepare($sql);
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $resultado = $stmt->get_result();
+            
+            if ($resultado->num_rows > 0) {
+                return $resultado->fetch_assoc();
+            } else {
+                return null;
+            }
+        }
+        
+        public function actualizarQueja($id, $nombre, $correo, $tipo, $mensaje) {
+            // Preparar la consulta SQL con MySQLi
+            $sql = "UPDATE quejas SET nombre = ?, correo = ?, tipo = ?, mensaje = ? WHERE id = ?";
+            $stmt = $this->conexion->prepare($sql);
+            
+            // Vincular los parámetros
+            $stmt->bind_param("ssssi", $nombre, $correo, $tipo, $mensaje, $id);
+            
+            // Ejecutar la consulta y devolver el resultado (true o false)
+            return $stmt->execute();
+        }
+        
+        public function borrarQueja($id) {
+            $sql = "DELETE FROM quejas WHERE id = ?";
+            $stmt = $this->conexion->prepare($sql);
+            $stmt->bind_param("i", $id);
+        
+            return $stmt->execute();
         }
         
         

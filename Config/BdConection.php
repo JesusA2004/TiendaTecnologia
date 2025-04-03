@@ -6,10 +6,10 @@
             if (self::$conn === null) {
                 // 1. Elimina el mensaje de éxito (interfiere con redirecciones)
                 self::$conn = mysqli_connect(
-                    'mysql.webcindario.com', 
-                    'cyberstore1',
-                    'CarG2401',
-                    'cyberstore1'
+                    'localhost', 
+                    'root',
+                    '',
+                    'tienda'
                 );
 
                 // 2. Verifica errores de conexión
