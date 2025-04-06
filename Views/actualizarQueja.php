@@ -52,7 +52,7 @@
             
             <button type="submit" name="actualizar">Actualizar</button>
         </form>
-        <a href="index.php">Regresar</a>
+        <a href="quejas.php">Regresar</a>
     </div>
 </body>
 </html>
